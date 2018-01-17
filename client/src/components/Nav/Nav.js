@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { login, logout, isLoggedIn } from '../../utils/authService';
 import "./Nav.css";
 
 const Nav = () => (
@@ -20,10 +21,10 @@ const Nav = () => (
         <Link className="navbar-brand " to="/">
           TRAVERSE - Eat Sleep Play
         </Link>
-       
+
       </div>
       <div className="collapse navbar-collapse ">
-        <ul className="nav navbar-nav mr-auto"> 
+        <ul className="nav navbar-nav mr-auto">
           <li >
             <Link to="/places">Search Places</Link>
           </li>
@@ -35,7 +36,11 @@ const Nav = () => (
           </li>
            <li>
             <a href="https://www.southwest.com/">Get There</a>
-            
+          </li>
+          <li>
+           {
+             (isLoggedIn()) ? ( <a href='#' onClick={() => logout()}>Log out </a> ) : ( <a href='#' onClick={() => login()}>Log In</a> )
+           }
           </li>
         </ul>
       </div>
