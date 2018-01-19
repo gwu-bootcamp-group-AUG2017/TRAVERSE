@@ -1,0 +1,33 @@
+.rowC{display:flex; flex-direction:row;background-color: white;
+	margin-right: 10px; 
+	 }
+
+.img{
+	height: 175px;
+	width: 225px;
+}
+.name{
+	width: 225px;
+	font-size: 24px;
+}
+.review{
+	width: 225px;
+}
+.rating{
+	width: 225px;
+}
+
+.card-footer{
+	width: 225px;
+	backgrwound-color: #f2f2f2;
+}
+
+.btn-primary{
+	width: 225px;
+	text-align: center;
+	background-color:  #f2f2f2;
+	color: blue;
+
+	border: transparent;
+	
+}

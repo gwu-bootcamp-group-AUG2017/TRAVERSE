@@ -6,29 +6,17 @@ const db = require("../models");
 // findAll searches the NYT API and returns only the entries we haven't already saved
  module.exports = {
   findAll: function(req, res) {
-     var query = JSON.stringify(req.query);
+    var query = JSON.stringify(req.query);
 //    query = query.replace(",","+");
     query = query.substring(5);
     var quer= query.replace(",", "+");
     quer= quer.replace("}","");
+    console.log(quer);
+
+
     db.Article
-
-
     axios
-        .get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Las+Vegas&units=imperial&cnt=55&APPID=db7d13cc387193f50bbeaf798516c831')
-        .then(response => { 
-               console.log(response.data);
-                       
-      
-         })
-
-
-
-
-
-
-    axios
-      .get("https://maps.googleapis.com/maps/api/place/textsearch/json?query='"+ quer +"' +&type=lodging&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4")
+      .get("https://maps.googleapis.com/maps/api/place/textsearch/json?query='"+ quer +"' + &type=night_club&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4")
      .then(response => {
        var resultLen = 4;
        if (response.data.results.length < 4) {
@@ -63,15 +51,13 @@ const db = require("../models");
                   "website" : response.data.result.website,
                   "review" : response.data.result.reviews[0].text });
 //          console.log(somedata.hotels); 
-          if (id == 3){
+       if (id == 3){
           axios
-         
           .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4" )
          .then(result =>res.json(somedata.hotels))
           .catch(err => res.status(422).json(err));
-          }
+        }
          });
-        
 
         }
  

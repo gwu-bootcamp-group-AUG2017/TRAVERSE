@@ -12,21 +12,6 @@ const db = require("../models");
     var quer= query.replace(",", "+");
     quer= quer.replace("}","");
     db.Article
-
-
-    axios
-        .get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Las+Vegas&units=imperial&cnt=55&APPID=db7d13cc387193f50bbeaf798516c831')
-        .then(response => { 
-               console.log(response.data);
-                       
-      
-         })
-
-
-
-
-
-
     axios
       .get("https://maps.googleapis.com/maps/api/place/textsearch/json?query='"+ quer +"' +&type=lodging&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4")
      .then(response => {

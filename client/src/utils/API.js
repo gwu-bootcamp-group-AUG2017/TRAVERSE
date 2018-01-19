@@ -6,6 +6,13 @@ export default {
   getArticles: function(params) {
     return axios.get("/api/nyt", { params: filterParams(params) });
   },
+   getArticles2: function(params) {
+    return axios.get("/api/restaurant", { params: filterParams(params) });
+  },
+   getArticles3: function(params) {
+    return axios.get("/api/nightclubs", { params: filterParams(params) });
+  },
+  
   // Gets all saved articles
   getSavedArticles: function() {
     return axios.get("/api/articles");
