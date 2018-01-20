@@ -11,7 +11,7 @@ const db = require("../models");
     query = query.substring(5);
     var quer= query.replace(",", "+");
     quer= quer.replace("}","");
-    console.log(quer);
+
 
 
     db.Article
@@ -35,22 +35,14 @@ const db = require("../models");
             id ++;
             var photo = response.data.result.photos[0].photo_reference;
             var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=254&maxheight=200&photoreference=" + photo + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4"
-            
-
-
-
-
-
-
-
-
+ 
          somedata.hotels.push({  id : id,
                   "name" : response.data.result.name,
                   "url" : url,
                   "rating" : "Rating: " + response.data.result.rating,
                   "website" : response.data.result.website,
                   "review" : response.data.result.reviews[0].text });
-//          console.log(somedata.hotels); 
+
        if (id == 3){
           axios
           .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4" )

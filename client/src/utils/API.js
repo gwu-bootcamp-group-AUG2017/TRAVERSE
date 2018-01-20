@@ -12,6 +12,9 @@ export default {
    getArticles3: function(params) {
     return axios.get("/api/nightclubs", { params: filterParams(params) });
   },
+   getWeather: function(params) {
+    return axios.get("/api/weather", { params: filterParams(params) });
+  },
   
   // Gets all saved articles
   getSavedArticles: function() {

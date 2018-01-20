@@ -2,13 +2,14 @@
  
 import Header from "../../components/Header";
 import Article from "../../components/Article";
+import Weather from "../../components/Weather";
 import Jumbotron from "../../components/Jumbotron";
 import Panel from "../../components/Panel";
 import Form from "../../components/Form";
 
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
-import { Col,Row, Container, Div, Div2 } from "../../components/Grid";
+import { Col,Row, Container, Div, Div2, Div3 } from "../../components/Grid";
 import { List, ListItem  } from "../../components/List";
 
 class Home extends Component {
@@ -16,10 +17,15 @@ class Home extends Component {
     articles: [],
     restaurant: [],
     nightclubs: [],
+    weather: [],
     q: "",
     start_year: "",
-    end_year: "",
-    message: "Search For Articles To Begin!"
+    end_year: "", 
+    header: "",
+    header1: "",
+    header2: "",
+    header3: "",
+    message: ""
   };
 
   handleInputChange = event => {
@@ -40,9 +46,10 @@ class Home extends Component {
       .then(res =>
         this.setState({
 
-          articles: res.data,
+         articles: res.data,
+         header1: "Dine",
          message: !res.data.length
-            ? "No New Articles Found, Try a Different Query"
+            ? "No Food Found for this City"
            : ""
         })
       )
@@ -61,8 +68,9 @@ class Home extends Component {
         this.setState({
 
          restaurant: res.data,
+         header2: "Stay",
          message: !res.data.length
-            ? "No New Articles Found, Try a Different Query"
+            ? "No Hotels Found for this City"
            : ""
         })
       )
@@ -79,8 +87,28 @@ class Home extends Component {
         this.setState({
 
          nightclubs: res.data,
+         header3: "Play",
          message: !res.data.length
-            ? "No New Articles Found, Try a Different Query"
+            ? "No Clubs Found for this City"
+           : ""
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+  getWeather = () => {
+    API.getWeather({
+      q: this.state.q
+    })
+ 
+
+      .then(res =>
+        this.setState({
+
+         weather: res.data,
+         header: "Weather for " + this.state.q,
+         message: !res.data.length
+            ? "No Weather Found for this City"
            : ""
         })
       )
@@ -90,6 +118,7 @@ class Home extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    this.getWeather();
     this.getArticles();
     this.getArticles2();
     this.getArticles3();
@@ -121,9 +150,39 @@ class Home extends Component {
          
           </Col>
         </Row>
+
+
+
+
         <Row>
           <Col size="md-12">  
-          <Panel title="Where to eat?">
+          
+             
+             <h2 className="text-center">{this.state.header}</h2>
+              {this.state.weather.length ? (
+                <Div3>
+                  
+                  {this.state.weather.map(weather => (
+                    <Weather            
+                     key={weather._id}
+                     day={weather.day}
+                     max_temp={weather.max_temp}
+                     min_temp={weather.min_temp}
+                     main={weather.main}
+                     desc={weather.desc}
+                     icon={weather.icon}
+                    />
+                  ))}
+               </Div3>
+              ) : (
+                <h2 className="text-center">{this.state.message}</h2>
+              )}
+           
+          
+         
+          
+            
+          <h2 className="text-center">{this.state.header1}</h2>
           
               {this.state.restaurant.length ? (
              
@@ -141,10 +200,11 @@ class Home extends Component {
                   ))}
                 </Div2>
               ) : (
-                <h2 className="text-center"> x</h2>
+                <h2 className="text-center">{this.state.message}</h2>
               )}
-            </Panel>
-             <Panel title="Where to stay?">
+            
+             <h2 className="text-center">{this.state.header2}</h2>
+           
           
               {this.state.articles.length ? (
              
@@ -162,12 +222,12 @@ class Home extends Component {
                   ))}
                 </Div2>
               ) : (
-                <h2 className="text-center"> x</h2>
+                <h2 className="text-center">{this.state.message}</h2>
               )}
-            </Panel>
+           
 
 
-             <Panel title="Where to play?">
+            <h2 className="text-center">{this.state.header3}</h2>
           
               {this.state.nightclubs.length ? (
              
@@ -185,13 +245,13 @@ class Home extends Component {
                   ))}
                 </Div2>
               ) : (
-                <h2 className="text-center"> x</h2>
+                <h2 className="text-center">{this.state.message}</h2>
               )}
-            </Panel>
+    
           </Col>
         </Row>
     
-          <Footer />
+      <Footer />
       </Container>
    
     );

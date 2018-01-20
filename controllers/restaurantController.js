@@ -7,7 +7,7 @@ const db = require("../models");
  module.exports = {
   findAll: function(req, res) {
      var query = JSON.stringify(req.query);
-//    query = query.replace(",","+");
+
     query = query.substring(5);
     var quer= query.replace(",", "+");
     quer= quer.replace("}","");
@@ -32,16 +32,7 @@ const db = require("../models");
             id ++;
             var photo = response.data.result.photos[0].photo_reference;
             var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=254&maxheight=200&photoreference=" + photo + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4"
-            
-
-
-
-
-
-
-
-
-         somedata.hotels.push({  id : id,
+          somedata.hotels.push({  id : id,
                   "name" : response.data.result.name,
                   "url" : url,
                   "rating" : "Rating: " + response.data.result.rating,

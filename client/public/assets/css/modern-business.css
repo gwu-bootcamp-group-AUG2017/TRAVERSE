@@ -6,7 +6,7 @@
 
 body {
   padding-top: 54px;
- background-color: #f2f2f2;
+ background-color: #DEB887;
 }
 
 @media (min-width: 992px) {
@@ -17,6 +17,7 @@ body {
 
 .carousel-item {
   height: 65vh;
+  width: 100%;
   min-height: 300px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -56,9 +57,10 @@ h1 {
   font-size: 61px;
 }
 
-h2 {
+.h2 {
   font-family:'Sree Krushnadevaraya', serif;
-  font-size: 31px;
+  font-size: 31px;,
+  background-color: #FFFFE0
 }
 
 h3 {
