@@ -16,10 +16,10 @@ const Weather = ({ day, max_temp, min_temp, _id, main, desc, icon }) => (
 
     
         
-        <img className="wimg" src={icon}  />     
+        <img className="wimg" src={icon} alt='Icon' />     
        <p className="wname">{day}</p>
-       <p className="wreview">High:{max_temp} Low:{min_temp}</p>
-       <p className="wreview">{main}</p>
+       <p className="wreview">High:{max_temp} Low:{min_temp} {main}</p>
+       
   
        
       </div>

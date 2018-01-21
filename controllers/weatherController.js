@@ -16,7 +16,7 @@
     quer= quer.replace("}", "");
     
 //    db.Article
-    query = 'q=' + quer.trim() + '&units=imperial&cnt=7&APPID=db7d13cc387193f50bbeaf798516c831';
+    query = 'q=' + quer.trim() + '&units=imperial&cnt=6&APPID=db7d13cc387193f50bbeaf798516c831';
     
 
     axios

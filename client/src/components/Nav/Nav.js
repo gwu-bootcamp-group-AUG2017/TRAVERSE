@@ -21,33 +21,39 @@ const Nav = () => (
         <Link className="navbar-brand " to="/">
           TRAVERSE - Eat Sleep Play
         </Link>
-       
+
       </div>
       <div className="collapse navbar-collapse ">
-        <ul className="nav navbar-nav mr-auto"> 
-          <li >
-            <Link to="/">Search Places </Link>
-          </li>
-           <li>
-            <Link to="/">     Add New Place </Link>
-          </li>
+        <ul className="nav navbar-nav mr-auto">
+
           <li>
-            <Link to="/saved"> Saved Travelers </Link>
-          </li>
-           <li>
-            <a href="https://www.southwest.com/"> Get There</a>
+               {(isLoggedIn()) ? (<Link to="/places">Search Places</Link>) : ( "" )}
+          </li> 
+          
+          <li >
+                {(isLoggedIn()) ? (<Link to="/">Add New Place</Link>) : ( "" )}
+          </li>  
             
-          </li>
+          <li >
+                {(isLoggedIn()) ? (<Link to="/saved">Saved Travelers</Link>) : ( "" )}
+          </li> 
+       
            <li>
            {
-             (isLoggedIn()) ? ( <a href='#' onClick={() => logout()}>Log out </a> ) : ( <a href='#' onClick={() => login()}>Log In</a> )
-            }
-            </li>
+             (isLoggedIn()) ? (  <a href="https://www.southwest.com/">Get There</a> ) : ( "" )
+           }
+       
+           </li>
+           <li>
+           {
+             (isLoggedIn()) ? ( <a href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a href='#login' onClick={() => login()}>Log In</a> )
+           }
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 );
-             
 
 export default Nav;
+

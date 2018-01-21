@@ -20,7 +20,7 @@ const Form = props => (
       <button
         onClick={props.handleFormSubmit}
         type="submit"
-        className="btn btn-lg btn-danger"
+        className="btn btn-md btn-danger"
       >
         Submit
       </button>

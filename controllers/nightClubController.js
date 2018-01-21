@@ -1,22 +1,26 @@
  const axios = require("axios");
-const db = require("../models");
+
 
 // Defining methods for the nytController
 
 // findAll searches the NYT API and returns only the entries we haven't already saved
  module.exports = {
   findAll: function(req, res) {
-    var query = JSON.stringify(req.query);
-//    query = query.replace(",","+");
-    query = query.substring(5);
-    var quer= query.replace(",", "+");
-    quer= quer.replace("}","");
-
-
-
-    db.Article
+    var city = JSON.stringify(req.query.q);
+    var type = JSON.stringify(req.query.type);
+    city = city.replace(",", "+");
+    city = city.replace("\"", " ");
+    city = city.replace("\"", " ");
+    city = city.trim().replace(" ", "+");
+    type = type.replace("\"", " ");
+    type = type.replace("\"", " ");
+    console.log(city);
+    var quer = "";
+    var query = "query=" + city + "&type=" + type.trim() + '&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
+ 
+  
     axios
-      .get("https://maps.googleapis.com/maps/api/place/textsearch/json?query='"+ quer +"' + &type=night_club&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4")
+      .get("https://maps.googleapis.com/maps/api/place/textsearch/json?"+query)
      .then(response => {
        var resultLen = 4;
        if (response.data.results.length < 4) {

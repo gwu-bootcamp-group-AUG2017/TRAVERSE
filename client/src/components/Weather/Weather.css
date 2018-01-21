@@ -1,5 +1,5 @@
 .rowD{display:flex; flex-direction:row;background-color: khaki;
-	 margin-right: 10px; margin-left:  10px; 
+	 margin-right: 10px;  border-right: 1px solid grey; 
 	 }
 
 .img{
@@ -23,7 +23,7 @@
 	width: 225px;
 }
 .wreview{
-	width: 125px;
+	width: 150px;
 }
 .rating{
 	width: 225px;

@@ -9,7 +9,6 @@ import Form from "../../components/Form";
 // import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col,Row, Container, Div2, Div3 } from "../../components/Grid";
-import { isLoggedIn } from '../../utils/authService';
 
 
 class Home extends Component {
@@ -19,7 +18,6 @@ class Home extends Component {
     nightclubs: [],
     weather: [],
     q: "",
-    type: "",
     start_year: "",
     end_year: "", 
     header: "",
@@ -37,9 +35,10 @@ class Home extends Component {
   };
 
   getArticles = () => {
-    API.getArticles3({
+    API.getArticles({
       q: this.state.q,
-      type: "lodging"
+      start_year: this.state.start_year,
+      end_year: this.state.end_year
     })
  
 
@@ -47,7 +46,7 @@ class Home extends Component {
         this.setState({
 
          articles: res.data,
-         header1: "Where to Dine",
+         header1: "Dine",
          message: !res.data.length
             ? "No Food Found for this City"
            : ""
@@ -57,9 +56,10 @@ class Home extends Component {
   };
 
    getArticles2 = () => {
-    API.getArticles3({
+    API.getArticles2({
       q: this.state.q,
-      type: "restaurant"
+      start_year: this.state.start_year,
+      end_year: this.state.end_year
     })
  
 
@@ -67,7 +67,7 @@ class Home extends Component {
         this.setState({
 
          restaurant: res.data,
-         header2: "Where to Stay",
+         header2: "Stay",
          message: !res.data.length
             ? "No Hotels Found for this City"
            : ""
@@ -78,8 +78,7 @@ class Home extends Component {
 
   getArticles3 = () => {
     API.getArticles3({
-      q: this.state.q,
-      type: "night_club"
+      q: this.state.q
     })
  
 
@@ -87,7 +86,7 @@ class Home extends Component {
         this.setState({
 
          nightclubs: res.data,
-         header3: "Where to Play",
+         header3: "Play",
          message: !res.data.length
             ? "No Clubs Found for this City"
            : ""
@@ -130,12 +129,10 @@ class Home extends Component {
   
   };
 
- 
-            
-   
   render() {
     return (
-       
+      
+     
       <Container>
       
  
@@ -157,10 +154,10 @@ class Home extends Component {
 
 
         <Row>
-          <Col size="md-12">  
+          <Col size="md-2">  
           
              
-             <h2 className="text-center h2 bg-dark">{this.state.header}</h2>
+             <h2 className="text-center">{this.state.header}</h2>
               {this.state.weather.length ? (
                 <Div3>
                   
@@ -184,7 +181,7 @@ class Home extends Component {
          
           
             
-          <h2 className="text-center rest">{this.state.header1}</h2>
+          <h2 className="text-center">{this.state.header1}</h2>
           
               {this.state.restaurant.length ? (
              
@@ -205,7 +202,7 @@ class Home extends Component {
                 <h2 className="text-center">{this.state.message}</h2>
               )}
             
-             <h2 className="text-center h2 club">{this.state.header2}</h2>
+             <h2 className="text-center">{this.state.header2}</h2>
            
           
               {this.state.articles.length ? (
@@ -229,7 +226,7 @@ class Home extends Component {
            
 
 
-            <h2 className="text-center rest">{this.state.header3}</h2>
+            <h2 className="text-center">{this.state.header3}</h2>
           
               {this.state.nightclubs.length ? (
              
@@ -247,16 +244,16 @@ class Home extends Component {
                   ))}
                 </Div2>
               ) : (
-                <h2 className="text-center  h2 bg-dark">{this.state.message}</h2>
+                <h2 className="text-center">{this.state.message}</h2>
               )}
     
           </Col>
         </Row>
-               </Container>
+    
+           </Container>
    
     );
   }
 }
-
 
 export default Home;

@@ -14,7 +14,7 @@ const Article = ({ name, rating, _id, review, website,url }) => (
       
 
        <div className="card-body ">
-        <img className="img" src={url}  /> 
+        <img className="img" src={url} alt='icon' /> 
               <h4 className="card-title">
                 <div className="name" >{name}</div>
                 
