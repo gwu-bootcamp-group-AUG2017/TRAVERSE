@@ -16,21 +16,21 @@ const Header = () => (
           <div className="carousel-item active carousel-item1" >
             <div className="carousel-caption d-none d-md-block">
               <h3>Where to Eat</h3>
-              <p>This is a description for the first slide.</p>
+             
             </div>
           </div>
         
           <div className="carousel-item carousel-item2" >
             <div className="carousel-caption d-none d-md-block">
               <h3>Where to Stay</h3>
-              <p>This is a description for the second slide.</p>
+             
             </div>
           </div>
        
           <div className="carousel-item carousel-item3" >
             <div className="carousel-caption d-none d-md-block">
               <h3>Where to Play</h3>
-              <p>This is a description for the third slide.</p>
+             
             </div>
           </div>
         </div>

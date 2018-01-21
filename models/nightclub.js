@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const articleSchema = new Schema({
+const  nightclubSchema = new Schema({
   _id: { type: Schema.Types.ObjectId, required: true },
   name: { type: String, required: true },
  rating: { type: Number, required: true },
@@ -10,7 +10,6 @@ const articleSchema = new Schema({
  review: { type: String, required: true },
 }, { _id: false });
 
-const Article = mongoose.model("Article", articleSchema);
+const NightClub = mongoose.model("NightClub", nightclubSchema);
 
-module.exports = Article;
-
+module.exports = NightClub;

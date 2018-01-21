@@ -1,4 +1,4 @@
 module.exports = {
-  Article: require("./article"),
-  Location: require("./location")
+  Nightclubs: require("./nightclub"),
+  Weather: require("./weather")
 };
