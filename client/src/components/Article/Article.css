@@ -4,26 +4,25 @@
 
 .img{
 	height: 175px;
-	width: 225px;
+	width: 175px;
 }
 .name{
-	width: 225px;
+	width: 215px;
 	font-size: 24px;
 }
 .review{
-	width: 225px;
+	width: 175px;
 }
 .rating{
-	width: 225px;
+	width: 175px;
 }
-
 .card-footer{
-	width: 225px;
+	width: 175px;
 	backgrwound-color: #f2f2f2;
 }
 
 .btn-primary{
-	width: 225px;
+	width: 175px;
 	text-align: center;
 	background-color:  #f2f2f2;
 	color: blue;

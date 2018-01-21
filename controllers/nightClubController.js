@@ -14,8 +14,6 @@
     city = city.trim().replace(" ", "+");
     type = type.replace("\"", " ");
     type = type.replace("\"", " ");
-    console.log(city);
-    var quer = "";
     var query = "query=" + city + "&type=" + type.trim() + '&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
  
   
