@@ -25,21 +25,28 @@ const Nav = () => (
       </div>
       <div className="collapse navbar-collapse ">
         <ul className="nav navbar-nav mr-auto">
+
+          <li>
+               {(isLoggedIn()) ? (<Link to="/places">Search Places</Link>) : ( "" )}
+          </li> 
+          
           <li >
-            <Link to="/places">Search Places</Link>
-          </li>
+                {(isLoggedIn()) ? (<Link to="/">Add New Place</Link>) : ( "" )}
+          </li>  
+            
+          <li >
+                {(isLoggedIn()) ? (<Link to="/saved">Saved Travelers</Link>) : ( "" )}
+          </li> 
+       
            <li>
-            <Link to="/">Add New Place</Link>
-          </li>
-          <li>
-            <Link to="/saved">Saved Travelers</Link>
-          </li>
-           <li>
-            <a href="https://www.southwest.com/">Get There</a>
-          </li>
-          <li>
            {
-             (isLoggedIn()) ? ( <a href='#' onClick={() => logout()}>Log out </a> ) : ( <a href='#' onClick={() => login()}>Log In</a> )
+             (isLoggedIn()) ? (  <a href="https://www.southwest.com/">Get There</a> ) : ( "" )
+           }
+       
+           </li>
+           <li>
+           {
+             (isLoggedIn()) ? ( <a href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a href='#login' onClick={() => login()}>Log In</a> )
            }
           </li>
         </ul>
