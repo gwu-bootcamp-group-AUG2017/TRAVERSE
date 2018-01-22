@@ -1,23 +1,16 @@
 import React from "react";
-import "./Article.css";
-import { DivPlaces} from "../../components/Grid";
+import "./Places.css";
+import {DivPlaces} from "../../components/Grid";
+import {isLoggedIn } from '../../utils/authService';
 
-const Article = ({ name, rating, _id, review, website,url }) => (
-  
-  <DivPlaces >
- 
-  
-     
-
-
+const Places = ({ name, rating, _id, review, website,url }) => (
+   (isLoggedIn()) ? ( 
+  <DivPlaces>
       <div className="col-lg-3 col-sm-4 portfolio-item  " >
-      
-
        <div className="card-body ">
         <img className="img" src={url} alt='icon' /> 
               <h4 className="card-title">
                 <div className="name" >{name}</div>
-                
               </h4>
        <div className="rating">{rating}</div>
        <p className="review">{review}</p>
@@ -29,9 +22,8 @@ const Article = ({ name, rating, _id, review, website,url }) => (
        </div>
       </div>
       </div>
- 
-   
   </DivPlaces>
+   ) : (<div></div>)
 );
 
-export default Article;
+export default Places;

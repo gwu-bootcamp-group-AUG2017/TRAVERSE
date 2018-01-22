@@ -9,7 +9,7 @@ export default {
 //   getArticles2: function(params) {
 //    return axios.get("/api/hotel", { params: filterParams(params) });
  // },
-   getArticles3: function(params) {
+   getPlaces: function(params) {
     return axios.get("/api/nightclubs", { params: filterParams(params) });
   },
    getWeather: function(params) {

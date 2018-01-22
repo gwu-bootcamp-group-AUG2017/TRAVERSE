@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Div3 = ({ fluid, children }) =>
+export const DivWeather = ({ fluid, children }) =>
   <div className="rowD">
     {children}
   </div>;

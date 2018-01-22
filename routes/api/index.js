@@ -2,7 +2,7 @@ const router = require("express").Router();
 const articleRoutes = require("./articles");
 //const hotelRoutes = require("./hotel");
 //const restRoutes = require("./restaurant");
-const clubRoutes = require("./nightclubs");
+const placesRoutes = require("./places");
 const weatherRoutes = require("./weather");
 // NYT routes
 router.use("/articles", articleRoutes);
@@ -11,7 +11,7 @@ router.use("/articles", articleRoutes);
 
 //router.use("/restaurant", restRoutes);
 
-router.use("/nightclubs", clubRoutes);
+router.use("/nightclubs", placesRoutes);
 
 router.use("/weather", weatherRoutes);
 

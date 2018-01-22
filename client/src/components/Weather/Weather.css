@@ -1,5 +1,5 @@
-.rowD{display:flex; flex-direction:row;background-color: khaki;
-	 margin-right: 20px;  border-right: 1px solid grey; 
+.rowD{display:flex; flex-direction:row;background-color: #FAEBD7;
+	 margin-right: 20px;  border-right: 1px solid grey;  
 	 }
 
 .img{
@@ -16,14 +16,14 @@
 	
 }
 .wname{
-	width: 125px;
+	width: 150px;
 	
 }
 .review{
 	width: 225px;
 }
 .wreview{
-	width: 150px;
+	width: 125px;
 }
 .rating{
 	width: 225px;

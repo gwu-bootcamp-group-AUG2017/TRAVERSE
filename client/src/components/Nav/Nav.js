@@ -27,7 +27,7 @@ const Nav = () => (
         <ul className="nav navbar-nav mr-auto">
 
           <li>
-               {(isLoggedIn()) ? (<Link to="/places">Search Places</Link>) : ( "" )}
+               {(isLoggedIn()) ? (<Link to="/">Search Places</Link>) : ( "" )}
           </li> 
           
           <li >

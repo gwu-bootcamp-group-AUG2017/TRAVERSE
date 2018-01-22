@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const nightClubController = require("../../controllers/nightClubController");
+const placesController = require("../../controllers/placesController");
 
 // Matches with "/api/nyt"
 router
   .route("/")
-  .get(nightClubController.findAll)
+  .get(placesController.findAll)
  
 module.exports = router;
