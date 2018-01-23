@@ -30,7 +30,7 @@ class Home extends Component {
     });
   };
 
- // CALL api for hotels
+// CALL api for hotels
   getHotels = () => {
     API.getPlaces({
       q: this.state.q,
@@ -48,7 +48,7 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-  // CALL api for restaurants
+// CALL api for restaurants
    getRestaurants = () => {
     API.getPlaces({
       q: this.state.q,
@@ -111,13 +111,30 @@ class Home extends Component {
     this.getClubs();
   };
 
-  handleArticleSave = id => {
-    const article = this.state.articles.find(article => article._id === id);
-    API.saveArticle(article).then(res => this.getArticles2());
+
+// save restaurant on submit
+  handleRestSave = id => {
+    const restaurant = this.state.restaurant.find(restaurant => restaurant._id === id);
+    API.savePlaces(restaurant).then(res => this.getRestaurants());
+  };
+
+
+// save hotel on submit
+  handleHotelSave = id => {
+    const hotels = this.state.hotels.find(hotels => hotels._id === id);
+    API.savePlaces(hotels).then(res => this.getHotels());
   
   };
 
-  // map data form API calls to divs
+
+// save nightclub on submit
+   handleClubSave = id => {
+    const nightclubs = this.state.nightclubs.find(nightclubs => nightclubs._id === id);
+    API.savePlaces(nightclubs).then(res => this.getClubs());
+  
+  };
+
+// map data form API calls to divs
 
   render() {
     return (
@@ -172,6 +189,8 @@ class Home extends Component {
                     website={restaurant.website}
                     url={restaurant.url}
                     review={restaurant.review}
+                    handleClick={this.handleRestSave}
+                    buttonText="Save Restaurant"
                   />
                 ))}
               </DivPlaces>
@@ -185,13 +204,15 @@ class Home extends Component {
               <DivPlaces>
                 {this.state.hotels.map(hotels => (
                   <Places
-                    key={hotels._id}
-                    _id={hotels._id}
+                    key={hotels.id}
+                    _id={hotels.id}
                     name={hotels.name}
                     rating={hotels.rating}
                     website={hotels.website}
                     url={hotels.url}
                     review={hotels.review}
+                    handleClick={this.handleHotelSave}
+                    buttonText="Save Hotel"
                   />
                 ))}
               </DivPlaces>
@@ -212,6 +233,8 @@ class Home extends Component {
                     website={nightclubs.website}
                     url={nightclubs.url}
                     review={nightclubs.review}
+                    handleClick={this.handleClubSave}
+                    buttonText="Save Night Club"
                   />
                 ))}
               </DivPlaces>

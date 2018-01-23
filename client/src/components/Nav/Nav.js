@@ -24,18 +24,16 @@ const Nav = () => (
 
       </div>
       <div className="collapse navbar-collapse ">
-        <ul className="nav navbar-nav mr-auto">
+        <ul className="nav navbar-nav">
 
           <li>
                {(isLoggedIn()) ? (<Link to="/">Search Places</Link>) : ( "" )}
           </li> 
           
-          <li >
-                {(isLoggedIn()) ? (<Link to="/">Add New Place</Link>) : ( "" )}
-          </li>  
+        
             
           <li >
-                {(isLoggedIn()) ? (<Link to="/saved">Saved Travelers</Link>) : ( "" )}
+                {(isLoggedIn()) ? (<Link to="/saved">Saved Places</Link>) : ( "" )}
           </li> 
        
            <li>

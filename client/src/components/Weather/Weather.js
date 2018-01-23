@@ -2,6 +2,7 @@ import React from "react";
 import "./Weather.css";
 import { DivWeather} from "../../components/Grid";
 import { isLoggedIn } from '../../utils/authService';
+import formatDate from "../../utils/formatDate";
 
 
 const Weather = ({ day, max_temp, min_temp, _id, main, desc, icon }) => (
@@ -12,6 +13,7 @@ const Weather = ({ day, max_temp, min_temp, _id, main, desc, icon }) => (
 	       <p className="wname">{day}</p>
 	       <p className="wreview">High: {max_temp} Low: {min_temp}</p>
 	       <p className="wname">{main}</p>
+	     
        </div>
  
  

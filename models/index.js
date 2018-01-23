@@ -1,4 +1,4 @@
 module.exports = {
-  Nightclubs: require("./nightclub"),
+  Places: require("./places"),
   Weather: require("./weather")
 };

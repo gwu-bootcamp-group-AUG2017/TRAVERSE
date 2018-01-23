@@ -41,7 +41,7 @@
          somedata.hotels.push({  id : id,
                   "name" : response.data.result.name,
                   "url" : url,
-                  "rating" : "Rating: " + response.data.result.rating,
+                  "rating" :  response.data.result.rating,
                   "website" : response.data.result.website,
                   "review" : response.data.result.reviews[0].text });
 

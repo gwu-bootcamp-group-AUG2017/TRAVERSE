@@ -1,8 +1,9 @@
 import React from "react";
 import "./Article.css";
 import { DivPlaces} from "../../components/Grid";
+import formatDate from "../../utils/formatDate";
 
-const Article = ({ name, rating, _id, review, website,url }) => (
+const Article = ({ name, rating, _id, review, website,url,handleClick, buttonText, date, saved }) => (
   
   <DivPlaces >
  
@@ -21,6 +22,9 @@ const Article = ({ name, rating, _id, review, website,url }) => (
               </h4>
        <div className="rating">{rating}</div>
        <p className="review">{review}</p>
+        <p>
+       Date {saved ? "Saved" : "Published"}: {formatDate(date)}
+    </p>
     
        <div >
         <a className="btn btn-primary text-center" href={website} rel="noopener noreferrer" target="_blank">

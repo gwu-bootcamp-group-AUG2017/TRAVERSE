@@ -11,7 +11,7 @@ router.use("/articles", articleRoutes);
 
 //router.use("/restaurant", restRoutes);
 
-router.use("/nightclubs", placesRoutes);
+router.use("/places", placesRoutes);
 
 router.use("/weather", weatherRoutes);
 
