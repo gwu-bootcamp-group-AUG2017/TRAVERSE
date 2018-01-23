@@ -18,7 +18,6 @@ const App = () =>
     
       <Switch>
         <Route exact path="/" component={Home} onEnter={requireAuth} />
-
         <Route exact path="/places" component={Location} onEnter={requireAuth} />
         <Route exact path="/saved" component={Saved}  onEnter={requireAuth} />
         <Route path="/callback" component={Callback} />                                                                 

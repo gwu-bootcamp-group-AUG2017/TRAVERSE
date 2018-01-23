@@ -1,27 +1,20 @@
- import React, { Component } from "react";
- 
-
-import Article from "../../components/Article";
-import Weather from "../../components/Weather";
-
+import React, { Component } from "react";
 import Form from "../../components/Form";
-
-// import Footer from "../../components/Footer";
+import Places from "../../components/Places";
+import Weather from "../../components/Weather";
 import API from "../../utils/API";
-import { Col,Row, Container, Div2, Div3 } from "../../components/Grid";
+import { Col,Row, Container, DivPlaces, DivWeather } from "../../components/Grid";
 import { isLoggedIn } from '../../utils/authService';
 
-
+// declaare state variables
 class Home extends Component {
   state = {
-    articles: [],
+    hotels: [],
     restaurant: [],
     nightclubs: [],
     weather: [],
     q: "",
     type: "",
-    start_year: "",
-    end_year: "", 
     header: "",
     header1: "",
     header2: "",
@@ -29,6 +22,7 @@ class Home extends Component {
     message: ""
   };
 
+// get text from input form
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -36,17 +30,15 @@ class Home extends Component {
     });
   };
 
-  getArticles = () => {
-    API.getArticles3({
+// CALL api for hotels
+  getHotels = () => {
+    API.getPlaces({
       q: this.state.q,
       type: "lodging"
     })
- 
-
       .then(res =>
         this.setState({
-
-         articles: res.data,
+         hotels: res.data,
          header1: "Where to Dine",
          message: !res.data.length
             ? "No Food Found for this City"
@@ -56,14 +48,13 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-   getArticles2 = () => {
-    API.getArticles3({
+// CALL api for restaurants
+   getRestaurants = () => {
+    API.getPlaces({
       q: this.state.q,
       type: "restaurant"
     })
- 
-
-      .then(res =>
+       .then(res =>
         this.setState({
 
          restaurant: res.data,
@@ -76,16 +67,14 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-  getArticles3 = () => {
-    API.getArticles3({
+// CALL api for night clubs
+  getClubs = () => {
+    API.getPlaces({
       q: this.state.q,
       type: "night_club"
     })
- 
-
       .then(res =>
         this.setState({
-
          nightclubs: res.data,
          header3: "Where to Play",
          message: !res.data.length
@@ -96,17 +85,15 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
+// call api for weather data
   getWeather = () => {
     API.getWeather({
       q: this.state.q
     })
- 
-
       .then(res =>
         this.setState({
-
          weather: res.data,
-         header: "Weather for " + this.state.q,
+         header: this.state.q + " Forecast",
          message: !res.data.length
             ? "No Weather Found for this City"
            : ""
@@ -115,145 +102,148 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-
+// call APIS for each data set
   handleFormSubmit = event => {
     event.preventDefault();
     this.getWeather();
-    this.getArticles();
-    this.getArticles2();
-    this.getArticles3();
+    this.getHotels();
+    this.getRestaurants();
+    this.getClubs();
   };
 
-  handleArticleSave = id => {
-    const article = this.state.articles.find(article => article._id === id);
-    API.saveArticle(article).then(res => this.getArticles2());
+
+// save restaurant on submit
+  handleRestSave = id => {
+    const restaurant = this.state.restaurant.find(restaurant => restaurant._id === id);
+    API.savePlaces(restaurant).then(res => this.getRestaurants());
+  };
+
+
+// save hotel on submit
+  handleHotelSave = id => {
+    const hotels = this.state.hotels.find(hotels => hotels._id === id);
+    API.savePlaces(hotels).then(res => this.getHotels());
   
   };
 
- 
-            
-   
+
+// save nightclub on submit
+   handleClubSave = id => {
+    const nightclubs = this.state.nightclubs.find(nightclubs => nightclubs._id === id);
+    API.savePlaces(nightclubs).then(res => this.getClubs());
+  
+  };
+
+// map data form API calls to divs
+
   render() {
     return (
-       
-      <Container>
+
+    <Container>
+      <Row>
+        <Col className="text-center" size="md-8">
+          <Form
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+            q={this.state.q}
+          />
+         
+        </Col>
+      </Row>
+
+      <Row>
+        <Col size="md-12"> 
+          {(isLoggedIn()) ? (  
+              <h2 className="text-center h2 bg-dark">{this.state.header}</h2>
+          ) : (<div></div>)}
+            {this.state.weather.length ? (
+              <DivWeather>
+                {this.state.weather.map(weather => (
+                  <Weather            
+                    key={weather._id}
+                   _id={weather._id}
+                    day={weather.day}
+                    max_temp={weather.max_temp}
+                    min_temp={weather.min_temp}
+                    main={weather.main}
+                    desc={weather.desc}
+                    icon={weather.icon}
+                  />
+                ))}
+              </DivWeather>
+                ) : (<h2 className="text-center">{this.state.message}</h2>
+          )}
+
+
+          {(isLoggedIn()) ? ( 
+              <h2 className="text-center rest">{this.state.header1}</h2>
+          ) : (<div></div>)}
+            {this.state.restaurant.length ? (
+              <DivPlaces>
+                {this.state.restaurant.map(restaurant => (
+                  <Places
+                    key={restaurant._id}
+                    _id={restaurant._id}
+                    name={restaurant.name}
+                    rating={restaurant.rating}
+                    website={restaurant.website}
+                    url={restaurant.url}
+                    review={restaurant.review}
+                    handleClick={this.handleRestSave}
+                    buttonText="Save Restaurant"
+                  />
+                ))}
+              </DivPlaces>
+                ) : (<h2 className="text-center">{this.state.message}</h2>
+          )}
       
- 
-        <Row>
-       
-          <Col className="text-center" size="md-8">
-        
-              <Form
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                q={this.state.q}
-           
-              />
-         
-          </Col>
-        </Row>
+          {(isLoggedIn()) ? ( 
+              <h2 className="text-center club">{this.state.header2}</h2>
+          ) : (<div></div>)}
+            {this.state.hotels.length ? (
+              <DivPlaces>
+                {this.state.hotels.map(hotels => (
+                  <Places
+                    key={hotels.id}
+                    _id={hotels.id}
+                    name={hotels.name}
+                    rating={hotels.rating}
+                    website={hotels.website}
+                    url={hotels.url}
+                    review={hotels.review}
+                    handleClick={this.handleHotelSave}
+                    buttonText="Save Hotel"
+                  />
+                ))}
+              </DivPlaces>
+                ) : (<h2 className="text-center">{this.state.message}</h2>
+          )}
 
-
-
-
-        <Row>
-          <Col size="md-12">  
-          
-             
-             <h2 className="text-center h2 bg-dark">{this.state.header}</h2>
-              {this.state.weather.length ? (
-                <Div3>
-                  
-                  {this.state.weather.map(weather => (
-                    <Weather            
-                     key={weather._id}
-                     day={weather.day}
-                     max_temp={weather.max_temp}
-                     min_temp={weather.min_temp}
-                     main={weather.main}
-                     desc={weather.desc}
-                     icon={weather.icon}
-                    />
-                  ))}
-               </Div3>
-              ) : (
-                <h2 className="text-center">{this.state.message}</h2>
-              )}
-           
-          
-         
-          
-            
-          <h2 className="text-center rest">{this.state.header1}</h2>
-          
-              {this.state.restaurant.length ? (
-             
-                 <Div2>
-                  {this.state.restaurant.map(restaurant => (
-                    <Article
-             
-                      key={restaurant._id}
-                      name={restaurant.name}
-                      rating={restaurant.rating}
-                      website={restaurant.website}
-                     url={restaurant.url}
-                       review={restaurant.review}
-                                       />
-                  ))}
-                </Div2>
-              ) : (
-                <h2 className="text-center">{this.state.message}</h2>
-              )}
-            
-             <h2 className="text-center h2 club">{this.state.header2}</h2>
-           
-          
-              {this.state.articles.length ? (
-             
-                 <Div2>
-                  {this.state.articles.map(article => (
-                    <Article
-             
-                      key={article._id}
-                      name={article.name}
-                      rating={article.rating}
-                      website={article.website}
-                     url={article.url}
-                       review={article.review}
-                                       />
-                  ))}
-                </Div2>
-              ) : (
-                <h2 className="text-center">{this.state.message}</h2>
-              )}
-           
-
-
-            <h2 className="text-center rest">{this.state.header3}</h2>
-          
-              {this.state.nightclubs.length ? (
-             
-                 <Div2>
-                  {this.state.nightclubs.map(nightclubs => (
-                    <Article
-             
-                      key={nightclubs._id}
-                      name={nightclubs.name}
-                      rating={nightclubs.rating}
-                      website={nightclubs.website}
-                     url={nightclubs.url}
-                       review={nightclubs.review}
-                                       />
-                  ))}
-                </Div2>
-              ) : (
-                <h2 className="text-center  h2 bg-dark">{this.state.message}</h2>
-              )}
+          {(isLoggedIn()) ? ( 
+              <h2 className="text-center hotel">{this.state.header3}</h2>
+          ) : (<div></div>)}
+            {this.state.nightclubs.length ? (
+              <DivPlaces>
+                {this.state.nightclubs.map(nightclubs => (
+                  <Places
+                    key={nightclubs._id}
+                    _id={nightclubs._id}
+                    name={nightclubs.name}
+                    rating={nightclubs.rating}
+                    website={nightclubs.website}
+                    url={nightclubs.url}
+                    review={nightclubs.review}
+                    handleClick={this.handleClubSave}
+                    buttonText="Save Night Club"
+                  />
+                ))}
+              </DivPlaces>
+               ) : (<h2 className="text-center">{this.state.message}</h2>
+          )}
     
-          </Col>
-        </Row>
-               </Container>
-   
+        </Col>
+      </Row>
+    </Container>
     );
   }
 }

@@ -6,7 +6,7 @@
 
 body {
   padding-top: 54px;
- background-color: #DEB887;
+ background-color:  #DCDCDC;
 }
 
 @media (min-width: 992px) {
@@ -59,8 +59,8 @@ h1 {
 
 .h2 {
   font-family:'Sree Krushnadevaraya', serif;
-  font-size: 25px;
-  width:25%;
+  font-size: 20px;
+  width:30%;
    margin-top: 2%;
   color: white;
   margin-bottom: 0%;
@@ -70,8 +70,8 @@ h1 {
 .rest {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
-  width:25%;
-  margin-top: 3%;
+  width:27%;
+ 
   color: white;
   background-color: maroon;
   margin-bottom: 0%;
@@ -81,8 +81,8 @@ h1 {
 .hotel {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
-  width:25%;
-   margin-top: 2%;
+  width:27%;
+  margin-top:2%;
   color: white;
   background-color: blue;
   margin-bottom: 0%;
@@ -92,8 +92,8 @@ h1 {
 .club {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
-  width:25%;
-   margin-top: 2%;
+  width:27%;
+  margin-top:2%;
   color: white;
   background-color: purple;
   margin-bottom: 0%;

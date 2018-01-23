@@ -4,7 +4,7 @@ import Panel from "../../components/Panel";
 import Article from "../../components/Article";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
+import { Col, Row, Container, DivPlaces } from "../../components/Grid";
 import { List } from "../../components/List";
 
 class Saved extends Component {
@@ -13,11 +13,11 @@ class Saved extends Component {
   };
 
   componentDidMount() {
-    this.getSavedArticles();
+    this.getSavedPlaces();
   }
 
-  getSavedArticles = () => {
-    API.getSavedArticles()
+  getSavedPlaces = () => {
+    API.getSavedPlaces()
       .then(res =>
         this.setState({
           articles: res.data
@@ -33,43 +33,34 @@ class Saved extends Component {
   render() {
     return (
       <Container>
+       
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>(ReactJS) New York Times Article Scrubber</strong>
-              </h1>
-              <h2 className="text-center">
-                Search for and save articles of interest.
-              </h2>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <Panel title="Saved Articles" icon="download">
+            <Panel title="Saved Places" icon="download">
               {this.state.articles.length ? (
-                <List>
+                <DivPlaces>
                   {this.state.articles.map(article => (
                     <Article
                       key={article._id}
                       _id={article._id}
-                      title={article.title}
+                      name={article.name}
+                      rating={article.rating}
                       url={article.url}
+                      website={article.website}
                       date={article.date}
                       handleClick={this.handleArticleDelete}
                       buttonText="Delete Article"
                       saved
                     />
                   ))}
-                </List>
+                </DivPlaces>
               ) : (
                 <h2 className="text-center">No Saved Articles</h2>
               )}
             </Panel>
           </Col>
         </Row>
-        <Footer />
+    
       </Container>
     );
   }

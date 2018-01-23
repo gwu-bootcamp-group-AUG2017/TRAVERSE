@@ -3,27 +3,30 @@ const db = require("../models");
 // Defining methods for the articleController
 module.exports = {
   findAll: function(req, res) {
-    db.Article
+    db.Places
       .find(req.query)
       .sort({ date: -1 })
-      .then(dbArticle => res.json(dbArticle))
+      .then(dbPlace => res.json(dbPlace))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Article
+    db.Places
       .findById(req.params.id)
-      .then(dbArticle => res.json(dbArticle))
+     .then(dbPlace => res.json(dbPlace))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    const article = {
-      _id: req.body._id,
-      title: req.body.headline.main,
-      url: req.body.web_url
+    const place = {
+      name: req.body.name,
+      rating: req.body.rating,
+      website: req.body.website,
+      url: req.body.url,
+      review: req.body.review
     };
-    db.Article
-      .create(article)
-      .then(dbArticle => res.json(dbArticle))
+
+    db.Places
+      .create(place)
+      .then(dbPlace => res.json(dbPlace))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
