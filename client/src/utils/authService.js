@@ -1,8 +1,11 @@
 import decode from 'jwt-decode';
 import { browserHistory } from 'react-router';
 import auth0 from 'auth0-js';
+var jwtDecode = require('jwt-decode');
+
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
+const UID = 'uid';
 
 var auth = new auth0.WebAuth({
   domain: 'hilldev.auth0.com',
@@ -10,7 +13,7 @@ var auth = new auth0.WebAuth({
   redirectUri: 'http://localhost:3000/callback',
   audience: 'https://hilldev.auth0.com/userinfo',
   responseType: 'token id_token',
-  scope: 'openid'
+  scope: 'openid profile'
 });
 
 export function login() {
@@ -69,13 +72,16 @@ export function isLoggedIn() {
   return !!idToken && !isTokenExpired(idToken);
 }
 
+export function setUID() {
+  let uid = jwtDecode(getParameterByName('id_token'));
+  localStorage.setItem(UID, JSON.stringify(uid.name));
+}
+
 function getTokenExpirationDate(encodedToken) {
   const token = decode(encodedToken);
   if (!token.exp) { return null; }
-
   const date = new Date(0);
   date.setUTCSeconds(token.exp);
-
   return date;
 }
 
