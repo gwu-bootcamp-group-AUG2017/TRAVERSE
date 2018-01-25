@@ -1,9 +1,10 @@
 import React from "react";
-import Select from "../../components/Select";
 import {isLoggedIn } from '../../utils/authService';
 
+ 
 
 const Form = props => (
+
    (isLoggedIn()) ? (
   <form>
  
@@ -21,10 +22,20 @@ const Form = props => (
         onChange={props.handleInputChange}
         required
       />
-          <Select> 
+ 
+     <select type="select" className="form-control text-center pull-right" 
+         value={props.price}
+         name="price" 
+         required
+         onChange={props.handleInputChange} >
+        <option defaultValue value="1">Cheap</option>
+        <option value="2">Moderate</option>
+        <option value="3">Expensive</option>
+        <option value="4">I got a Raise</option>
+   
+
+     </select>
       
-        </Select>
-       
 
 
 

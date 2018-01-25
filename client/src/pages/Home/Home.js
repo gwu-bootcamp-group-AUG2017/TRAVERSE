@@ -25,7 +25,8 @@ class Home extends Component {
 
 // get text from input form
   handleInputChange = event => {
-    const { name, value,price, value2 } = event.target;
+    const { name, value} = event.target;
+    const { price, value2} = event.target;
     this.setState({
       [name]: value,
       [price]: value2
@@ -37,8 +38,8 @@ class Home extends Component {
 
     API.getPlaces({
       q: this.state.q,
+      type: "lodging",
       price: this.state.price,
-      type: "lodging"
     })
       .then(res =>
         this.setState({
@@ -56,7 +57,8 @@ class Home extends Component {
    getRestaurants = () => {
     API.getPlaces({
       q: this.state.q,
-      type: "restaurant"
+      type: "restaurant",
+      price: this.state.price,
     })
        .then(res =>
         this.setState({
@@ -75,7 +77,8 @@ class Home extends Component {
   getClubs = () => {
     API.getPlaces({
       q: this.state.q,
-      type: "night_club"
+      type: "night_club",
+      price: this.state.price,
     })
       .then(res =>
         this.setState({
@@ -109,7 +112,7 @@ class Home extends Component {
 // call APIS for each data set
   handleFormSubmit = event => {
     event.preventDefault();
-    this.getWeather();
+//    this.getWeather();
     this.getHotels();
     this.getRestaurants();
     this.getClubs();
@@ -146,12 +149,14 @@ class Home extends Component {
     <Container>
       <Row>
         <Col className="text-center" size="md-8">
-          <Form
-            handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-            q={this.state.q}
          
-          />
+            <Form
+              handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+             q={this.state.q}
+            price={this.state.price}
+          
+            />
          
         </Col>
       </Row>

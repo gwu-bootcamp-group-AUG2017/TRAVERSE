@@ -6,13 +6,11 @@
 // findAll searches the NYT API and returns only the entries we haven't already saved
  module.exports = {
   findAll: function(req, res) {
-    console.log(req.query);
     var city = req.query.q;
     var type = req.query.type;
-  
+    var price = req.query.price;
 
-    var query = "query=" + city + "&type=" + type.trim() + '&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
- 
+    var query = "query=" + city.trim() + "&type=" + type + "&maxprice=" + price +'&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
   
     axios
       .get("https://maps.googleapis.com/maps/api/place/textsearch/json?"+query)

@@ -4,8 +4,8 @@ import Panel from "../../components/Panel";
 import Article from "../../components/Article";
 
 import API from "../../utils/API";
-import { Col, Row, Container, DivPlaces } from "../../components/Grid";
-import { List } from "../../components/List";
+import { Col, Row, Container} from "../../components/Grid";
+
 
 class Saved extends Component {
   state = {

@@ -10,7 +10,6 @@ export default {
 //    return axios.get("/api/hotel", { params: filterParams(params) });
  // },
    getPlaces: function(params) {
-    console.log(params.price);
      return axios.get("/api/places", { params: filterParams(params) });
   },
    getWeather: function(params) {
