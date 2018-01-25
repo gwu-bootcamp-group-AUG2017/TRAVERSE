@@ -2,7 +2,7 @@ import React from "react";
 import "./Weather.css";
 import { DivWeather} from "../../components/Grid";
 import { isLoggedIn } from '../../utils/authService';
-import formatDate from "../../utils/formatDate";
+
 
 
 const Weather = ({ day, max_temp, min_temp, _id, main, desc, icon }) => (

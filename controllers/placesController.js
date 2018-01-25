@@ -6,14 +6,11 @@
 // findAll searches the NYT API and returns only the entries we haven't already saved
  module.exports = {
   findAll: function(req, res) {
-    var city = JSON.stringify(req.query.q);
-    var type = JSON.stringify(req.query.type);
-    city = city.replace(",", "+");
-    city = city.replace("\"", " ");
-    city = city.replace("\"", " ");
-    city = city.trim().replace(" ", "+");
-    type = type.replace("\"", " ");
-    type = type.replace("\"", " ");
+    console.log(req.query);
+    var city = req.query.q;
+    var type = req.query.type;
+  
+
     var query = "query=" + city + "&type=" + type.trim() + '&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
  
   
@@ -39,6 +36,8 @@
             var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=254&maxheight=200&photoreference=" + photo + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4"
  
          somedata.hotels.push({  id : id,
+                  "type" : type,
+                  "city" : city,
                   "name" : response.data.result.name,
                   "url" : url,
                   "rating" :  response.data.result.rating,

@@ -4,7 +4,7 @@ import {DivPlaces} from "../../components/Grid";
 import {isLoggedIn } from '../../utils/authService';
 
 
-const Places = ({ name, rating, _id, review, website,url, handleClick, buttonText, date, saved }) => (
+const Places = ({ name, rating, _id, review, website,url, handleClick, buttonText, date, saved, type, city }) => (
    (isLoggedIn()) ? ( 
   <DivPlaces>
       <div className="col-lg-3 col-sm-4 portfolio-item  " >

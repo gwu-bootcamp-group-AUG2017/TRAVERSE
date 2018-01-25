@@ -1,41 +1,40 @@
 import React from "react";
 import "./Article.css";
-import { DivPlaces} from "../../components/Grid";
+import {Div} from "../../components/Grid";
+
 import formatDate from "../../utils/formatDate";
 
-const Article = ({ name, rating, _id, review, website,url,handleClick, buttonText, date, saved }) => (
-  
-  <DivPlaces >
+const Article = ({ name, rating, _id, review, website,url,handleClick, buttonText, date, saved, type, city }) => (
  
-  
-     
-
-
-      <div className="col-lg-3 col-sm-4 portfolio-item  " >
-      
-
-       <div className="card-body ">
-        <img className="img" src={url} alt='icon' /> 
-              <h4 className="card-title">
-                <div className="name" >{name}</div>
+ <Div className="div" >
+              <div className="div"></div>
+         
+               <img className="img" src={url} alt='icon' /> 
+               <div className="place" >{name}</div>
+              <div className="type" >Type: {type} in {city}</div>
+             
+              
+              <div className="prating">Rating: {rating}</div>
+               <div className="date">Date {saved ? "Saved" : "Published"}: {formatDate(date)}</div>
                 
-              </h4>
-       <div className="rating">{rating}</div>
-       <p className="review">{review}</p>
-        <p>
-       Date {saved ? "Saved" : "Published"}: {formatDate(date)}
-    </p>
-    
-       <div >
-        <a className="btn btn-primary text-center" href={website} rel="noopener noreferrer" target="_blank">
+
+          <div className="div">{review}</div>
+         
+
+         <span className="btn-group pull-right">
+        <a className="btn btnplace  text-center" href={website} rel="noopener noreferrer" target="_blank">
           Vist Their Website
         </a>
-       </div>
-      </div>
-      </div>
+        <button onClick={() => handleClick(_id)} className=" btn btnplace ">
+          {buttonText}</button>
+       </span>
+    
+    
+   
  
    
-  </DivPlaces>
+  </Div>
+
 );
 
 export default Article;

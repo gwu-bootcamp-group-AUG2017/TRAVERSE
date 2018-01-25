@@ -15,6 +15,7 @@ class Home extends Component {
     weather: [],
     q: "",
     type: "",
+    price: "",
     header: "",
     header1: "",
     header2: "",
@@ -24,16 +25,19 @@ class Home extends Component {
 
 // get text from input form
   handleInputChange = event => {
-    const { name, value } = event.target;
+    const { name, value,price, value2 } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      [price]: value2
     });
   };
 
-// CALL api for hotels
+  // CALL api for hotels
   getHotels = () => {
+
     API.getPlaces({
       q: this.state.q,
+      price: this.state.price,
       type: "lodging"
     })
       .then(res =>
@@ -146,6 +150,7 @@ class Home extends Component {
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
             q={this.state.q}
+         
           />
          
         </Col>
@@ -184,6 +189,8 @@ class Home extends Component {
                   <Places
                     key={restaurant._id}
                     _id={restaurant._id}
+                    type="Restaurant"
+                    city={this.state.q}
                     name={restaurant.name}
                     rating={restaurant.rating}
                     website={restaurant.website}
@@ -206,6 +213,8 @@ class Home extends Component {
                   <Places
                     key={hotels.id}
                     _id={hotels.id}
+                    type="Hotel"
+                    city={this.state.q}
                     name={hotels.name}
                     rating={hotels.rating}
                     website={hotels.website}
@@ -228,6 +237,8 @@ class Home extends Component {
                   <Places
                     key={nightclubs._id}
                     _id={nightclubs._id}
+                    type="Night Club"
+                    city={this.state.q}
                     name={nightclubs.name}
                     rating={nightclubs.rating}
                     website={nightclubs.website}

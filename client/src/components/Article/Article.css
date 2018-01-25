@@ -1,20 +1,61 @@
-.rowC{display:flex; flex-direction:row;background-color: #DEB887;
-	border-right: 1px solid lightgrey;
+
+
+body{background-color: khaki;
+	border-bottom: 2px solid lightgrey;
 	 }
+
+.div{
+	width: 100%;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.div2{
+	width: 100%;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	border-left: 1px solid lightgrey;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+}
 
 .img{
 	height: 175px;
 	width: 225px;
 }
-.name{
-	width: 225px;
-	font-size: 24px;
+.place{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.type{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.city{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 16px;
 }
 .review{
-	width: 225px;
+}	
+.prating{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 16px;
 }
-.rating{
-	width: 225px;
+.date{
+	margin-left: 20px;
+	font-size: 16px;
 }
 .card-footer{
 	width: 225px;

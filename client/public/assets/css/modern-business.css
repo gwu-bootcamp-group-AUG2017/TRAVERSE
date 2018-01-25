@@ -114,8 +114,14 @@ h3 {
 
 
 .btn {
-  background-color: white;
-  color: black;
+  background-color: blue;
+  color: white;
+  border-color: black;
+}
+
+.btnplace {
+  background-color: red;
+  color: white;
   border-color: black;
 }
 

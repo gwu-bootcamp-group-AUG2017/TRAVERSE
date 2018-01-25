@@ -7,6 +7,8 @@ const articleSchema = new Schema({
  rating: { type: Number, required: true },
  website: { type: String, required: true },
  url: { type: String, required: true },
+  city: { type: String, required: true },
+ type: { type: String, required: true },
  review: { type: String, required: true },
  date: { type: Date, default: Date.now }
 }, { _id: false });

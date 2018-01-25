@@ -30,16 +30,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Article
+    db.Places
       .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbArticle => res.json(dbArticle))
+      .then(dbPlace => res.json(dbPlaces))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Article
+    db.Places
       .findById({ _id: req.params.id })
-      .then(dbArticle => dbArticle.remove())
-      .then(dbArticle => res.json(dbArticle))
+      .then(dbPlace => dbPlace.remove())
+      .then(dbPlace => res.json(dbPlace))
       .catch(err => res.status(422).json(err));
   }
 };

@@ -10,7 +10,8 @@ export default {
 //    return axios.get("/api/hotel", { params: filterParams(params) });
  // },
    getPlaces: function(params) {
-    return axios.get("/api/places", { params: filterParams(params) });
+    console.log(params.price);
+     return axios.get("/api/places", { params: filterParams(params) });
   },
    getWeather: function(params) {
     return axios.get("/api/weather", { params: filterParams(params) });
@@ -20,16 +21,13 @@ export default {
   getSavedPlaces: function() {
     return axios.get("/api/articles");
   },
-  // Gets all saved articles
-  getLocations: function() {
-    return axios.get("/api/articles");
-  },
+ 
   // Deletes the saved article with the given id
-  deleteArticle: function(id) {
+  deletePlace: function(id) {
     return axios.delete("/api/articles/" + id);
   },
   // Saves an article to the database
   savePlaces: function(articleData,params) {
-     return axios.post("/api/articles", articleData);
+    return axios.post("/api/articles", articleData);
   }
 };
