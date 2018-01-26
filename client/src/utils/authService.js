@@ -6,7 +6,7 @@ var jwtDecode = require('jwt-decode');
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 const UID = 'uid';
-const IDP = 'identidy-provider';
+const IDP = 'identity-provider';
 
 var auth = new auth0.WebAuth({
   domain: 'hilldev.auth0.com',
@@ -76,8 +76,8 @@ export function isLoggedIn() {
 export function setUID() {
   let uid = jwtDecode(getParameterByName('id_token'));
   let tmp = JSON.stringify(uid.sub).split('|');
-  localStorage.setItem(IDP, tmp[0])
-  localStorage.setItem(UID, tmp[1]);
+  localStorage.setItem(IDP, tmp[0].slice(1,tmp[0].length))
+  localStorage.setItem(UID, tmp[1].slice(0,tmp[1].length-1));
 }
 
 function getTokenExpirationDate(encodedToken) {
