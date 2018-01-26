@@ -20,13 +20,15 @@ class Home extends Component {
     header1: "",
     header2: "",
     header3: "",
-    message: ""
+    message: "",
+  
   };
 
 // get text from input form
   handleInputChange = event => {
     const { name, value} = event.target;
     const { price, value2} = event.target;
+
     this.setState({
       [name]: value,
       [price]: value2
@@ -45,7 +47,8 @@ class Home extends Component {
         this.setState({
          hotels: res.data,
          header1: "Where to Dine",
-         message: !res.data.length
+         message: !res.data.length,
+         session: localStorage.getItem('uid')
             ? "No Food Found for this City"
            : ""
         })
@@ -62,7 +65,7 @@ class Home extends Component {
     })
        .then(res =>
         this.setState({
-
+         session: localStorage.getItem('uid'),
          restaurant: res.data,
          header2: "Where to Stay",
          message: !res.data.length
@@ -112,7 +115,7 @@ class Home extends Component {
 // call APIS for each data set
   handleFormSubmit = event => {
     event.preventDefault();
-//    this.getWeather();
+    this.getWeather();
     this.getHotels();
     this.getRestaurants();
     this.getClubs();
@@ -122,7 +125,9 @@ class Home extends Component {
 // save restaurant on submit
   handleRestSave = id => {
     const restaurant = this.state.restaurant.find(restaurant => restaurant._id === id);
-    API.savePlaces(restaurant).then(res => this.getRestaurants());
+    const uid = localStorage.getItem('uid');
+    console.log(restaurant);
+    API.savePlaces(restaurant,uid).then(res => this.getRestaurants());
   };
 
 
@@ -192,6 +197,7 @@ class Home extends Component {
               <DivPlaces>
                 {this.state.restaurant.map(restaurant => (
                   <Places
+                    uid={this.state.session}
                     key={restaurant._id}
                     _id={restaurant._id}
                     type="Restaurant"

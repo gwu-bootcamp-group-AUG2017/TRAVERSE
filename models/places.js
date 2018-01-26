@@ -10,7 +10,8 @@ const  placesSchema = new Schema({
  city: { type: String, required: true },
  type: { type: String, required: true },
  review: { type: String, required: true },
- date: { type: Date, default: Date.now }
+ date: { type: Date, default: Date.now },
+ uid: { type: String, required: true }
 });
 
 const Places = mongoose.model("Places", placesSchema);

@@ -27,6 +27,6 @@ export default {
   },
   // Saves an article to the database
   savePlaces: function(articleData,params) {
-    return axios.post("/api/articles", articleData);
+    return axios.post("/api/articles", articleData,params);
   }
 };

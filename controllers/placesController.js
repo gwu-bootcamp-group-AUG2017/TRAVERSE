@@ -1,4 +1,5 @@
  const axios = require("axios");
+ const key = require("./config.js");
 
 
 // Defining methods for the nytController
@@ -9,6 +10,8 @@
     var city = req.query.q;
     var type = req.query.type;
     var price = req.query.price;
+   
+    console.log(key.WEATHER_KEY);
 
     var query = "query=" + city.trim() + "&type=" + type + "&maxprice=" + price +'&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
   

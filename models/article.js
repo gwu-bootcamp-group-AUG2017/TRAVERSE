@@ -10,7 +10,8 @@ const articleSchema = new Schema({
   city: { type: String, required: true },
  type: { type: String, required: true },
  review: { type: String, required: true },
- date: { type: Date, default: Date.now }
+ date: { type: Date, default: Date.now ,
+ uid: { type: String, required: true }
 }, { _id: false });
 
 const Article = mongoose.model("Article", articleSchema);
