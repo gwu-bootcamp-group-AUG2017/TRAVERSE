@@ -11,9 +11,9 @@ module.exports = {
   },
   findById: function(req, res) {
     db.Places
-      .findById(req.params.id)
+     .find(req.query)
      .then(dbPlace => res.json(dbPlace))
-      .catch(err => res.status(422).json(err));
+     .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
     const place = {
@@ -32,12 +32,7 @@ module.exports = {
       .then(dbPlace => res.json(dbPlace))
        .catch(console.log(place));
   },
-  update: function(req, res) {
-    db.Places
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbPlace => res.json(dbPlaces))
-      .catch(err => res.status(422).json(err));
-  },
+  
   remove: function(req, res) {
     db.Places
       .findById({ _id: req.params.id })

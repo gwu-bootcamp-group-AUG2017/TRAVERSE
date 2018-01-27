@@ -37,6 +37,8 @@ const Nav = () => (
                                    <img className="airline" src="../assets/img/american.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
                {(isLoggedIn()) ? ( <a href="https://www.united.com/">
                                    <img className="airline" src="../assets/img/united.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
+                {(isLoggedIn()) ? ( <a href="https://www.hertz.com/">
+                                   <img className="airline" src="../assets/img/hertz.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }                   
       
           </li>
 

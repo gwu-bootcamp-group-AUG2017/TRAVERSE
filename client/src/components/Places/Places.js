@@ -9,8 +9,7 @@ const Places = ({ uid,name, rating, _id, review, website,url, handleClick, butto
   <DivPlaces>
       <div className="col-lg-3 col-sm-4 portfolio-item  " >
        <div className="card-body ">
-       <p className="review">{_id}</p>
-         <p className="review">{uid}</p>
+   
         <img className="img" src={url} alt='icon' /> 
               <h4 className="card-title">
                 <div className="name" >{name}</div>

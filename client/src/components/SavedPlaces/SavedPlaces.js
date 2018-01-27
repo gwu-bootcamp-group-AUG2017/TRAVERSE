@@ -3,7 +3,7 @@ import "./SavedPlaces.css";
 import {Div} from "../../components/Grid";
 import formatDate from "../../utils/formatDate";
 
-const SavedPlaces = ({ name, rating, _id, review, website,url,handleClick, buttonText, date, saved, type, city }) => (
+const SavedPlaces = ({ name, rating, _id, review, website,url,handleClick, buttonText, date, saved, type, city, uid }) => (
  
  <Div className="div"> 
         

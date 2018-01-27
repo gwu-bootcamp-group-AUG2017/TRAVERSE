@@ -4,7 +4,7 @@ import Places from "../../components/Places";
 import Weather from "../../components/Weather";
 import API from "../../utils/API";
 import { Col,Row, Container, DivPlaces, DivWeather } from "../../components/Grid";
-import { isLoggedIn } from '../../utils/authService';
+//import { isLoggedIn } from '../../utils/authService';
 
 // declaare state variables
 class Home extends Component {

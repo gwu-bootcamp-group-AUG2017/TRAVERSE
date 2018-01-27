@@ -14,8 +14,10 @@ class Saved extends Component {
     this.getSavedPlaces();
   }
 
-  getSavedPlaces = () => {
-    API.getSavedPlaces()
+
+
+ getSavedPlaces = () => {
+    API.getSavedPlaces({uid: localStorage.getItem('uid'),})
       .then(res =>
         this.setState({
           places: res.data
@@ -41,6 +43,7 @@ class Saved extends Component {
                     <SavedPlaces
                       key={place._id}
                       _id={place._id}
+                      uid={place.uid}
                       name={place.name}
                       rating={place.rating}
                       review={place.review}
@@ -56,7 +59,7 @@ class Saved extends Component {
                   ))}
                 </Row>
               ) : (
-                <h2 className="text-center">No Saved Articles</h2>
+                <h2 className="text-center">No Saved Places</h2>
               )}
             </Panel>
           </Col>

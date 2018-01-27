@@ -18,15 +18,15 @@ margin-left: 15px;
 }
 
 .airlinesw{
-	border: 2px solid grey;
+	border: 1px solid black;
 	margin-left: 25px;
-	height: 55px;
-    width: 75px;
+	height: 50px;
+    width: 65px;
  }
 
 .airline{
-	border: 2px solid grey;
+	border: 1px solid black;
 
-	height: 55px;
-    width: 75px;
+	height: 50px;
+    width: 65px;
  }

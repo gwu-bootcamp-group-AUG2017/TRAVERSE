@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const articleController = require("../../controllers/weatherController");
+const weatherController = require("../../controllers/weatherController");
 
 // Matches with "/api/nyt"
 router
   .route("/")
-  .get(articleController.findAll)
+  .get(weatherController.findAll)
  
 module.exports = router;
