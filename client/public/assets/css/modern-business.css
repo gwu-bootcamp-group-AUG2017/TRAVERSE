@@ -67,11 +67,22 @@ h1 {
  
 }
 
-.rest {
+.weather {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
   width:27%;
+  margin-top:1%;
+  color: white;
+  background-color: black;
+   margin-bottom: 0%;
  
+}
+
+.rest {
+  font-family:'Sree Krushnadevaraya', serif;
+  font-size: 25px;
+  width: 27%;
+  margin-top:1%;
   color: white;
   background-color: maroon;
   margin-bottom: 0%;
@@ -81,8 +92,8 @@ h1 {
 .hotel {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
-  width:27%;
-  margin-top:2%;
+  width: 27%;
+  margin-top:1%;
   color: white;
   background-color: blue;
   margin-bottom: 0%;
@@ -92,8 +103,8 @@ h1 {
 .club {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
-  width:27%;
-  margin-top:2%;
+  width: 27%;
+  margin-top:1%;
   color: white;
   background-color: purple;
   margin-bottom: 0%;
@@ -126,7 +137,8 @@ h3 {
 }
 
 .btnclass {
-  color: black;
+  background-color: black;
+  color: white;
   border-color: black;
 }
 

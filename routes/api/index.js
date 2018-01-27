@@ -1,19 +1,11 @@
 const router = require("express").Router();
-const articleRoutes = require("./articles");
-//const hotelRoutes = require("./hotel");
-//const restRoutes = require("./restaurant");
+const savedRoutes = require("./savedplaces");
 const placesRoutes = require("./places");
 const weatherRoutes = require("./weather");
-// NYT routes
-router.use("/articles", articleRoutes);
 
-//router.use("/hotel", hotelRoutes);
-
-//router.use("/restaurant", restRoutes);
-
+// TRAVERSE routes
+router.use("/savedplaces", savedRoutes);
 router.use("/places", placesRoutes);
-
 router.use("/weather", weatherRoutes);
-
 
 module.exports = router;

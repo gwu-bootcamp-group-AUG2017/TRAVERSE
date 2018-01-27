@@ -17,7 +17,9 @@ module.exports = {
   },
   create: function(req, res) {
     const place = {
-      uid: req.params.id,
+      uid: req.body.uid,
+     city: req.body.city,
+    type: req.body.type,
       name: req.body.name,
       rating: req.body.rating,
       website: req.body.website,
@@ -28,7 +30,7 @@ module.exports = {
     db.Places
       .create(place)
       .then(dbPlace => res.json(dbPlace))
-      .catch(console.log(req.params.id));
+       .catch(console.log(place));
   },
   update: function(req, res) {
     db.Places

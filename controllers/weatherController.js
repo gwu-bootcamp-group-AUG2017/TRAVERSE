@@ -1,23 +1,24 @@
  const axios = require("axios");
-// const db = require("../models");
+ const key = require("./config.js");
 
 // Defining methods for the nytController
 
 // findAll searches the NYT API and returns only the entries we haven't already saved
  module.exports = {
   findAll: function(req, res) {
-     var query = JSON.stringify(req.query);
-
+     var query = req.query.q;
+     console.log(query);
+     var APIkey = "&APPID=" + key.WEATHER_KEY;
+ //    console.log(APIkey);
 //    query = query.replace(",","+");
-    query = query.substring(5);
-    var quer= query.replace(",", "+");
-    quer = quer.replace("\"", " ");
-    quer = quer.replace("\"", " ");
-    quer= quer.replace("}", "");
+//    query = query.substring(5);
+//    var quer= query.replace(",", "+");
+//    quer = quer.replace("\"", " ");
+//    quer= quer.replace("}", "");
     
 //    db.Article
-    query = 'q=' + quer.trim() + '&units=imperial&cnt=6&APPID=db7d13cc387193f50bbeaf798516c831';
-    
+    query = 'q=' + query.trim() + '&units=imperial&cnt=6' + APIkey;
+  
 
     axios
         .get("http://api.openweathermap.org/data/2.5/forecast/daily?"+query)
@@ -43,7 +44,7 @@
                       "icon" : url });
                  if (id == 5){
                     axios
-                       .get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Las+Vegas&units=imperial&cnt=5&APPID=db7d13cc387193f50bbeaf798516c831')
+                        .get("http://api.openweathermap.org/data/2.5/forecast/daily?"+query)
                        .then(result =>res.json(somedata.weather))
                        .catch(err => res.status(422).json(err));
                  } 

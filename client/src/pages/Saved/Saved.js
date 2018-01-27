@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-
 import Panel from "../../components/Panel";
-import Article from "../../components/Article";
-
+import SavedPlaces from "../../components/SavedPlaces";
 import API from "../../utils/API";
 import { Col, Row, Container} from "../../components/Grid";
 
 
 class Saved extends Component {
   state = {
-    articles: []
+    places: []
   };
 
   componentDidMount() {
@@ -20,7 +18,7 @@ class Saved extends Component {
     API.getSavedPlaces()
       .then(res =>
         this.setState({
-          articles: res.data
+          places: res.data
         })
       )
       .catch(err => console.log(err));
@@ -36,21 +34,21 @@ class Saved extends Component {
        
         <Row>
           <Col size="md-12">
-            <Panel title="Saved Places" icon="download">
-              {this.state.articles.length ? (
+            <Panel title="My Saved Places" >
+              {this.state.places.length ? (
                 <Row>
-                  {this.state.articles.map(article => (
-                    <Article
-                      key={article._id}
-                      _id={article._id}
-                      name={article.name}
-                      rating={article.rating}
-                      review={article.review}
-                      city={article.city}
-                      type={article.type}
-                      url={article.url}
-                      website={article.website}
-                      date={article.date}
+                  {this.state.places.map(place => (
+                    <SavedPlaces
+                      key={place._id}
+                      _id={place._id}
+                      name={place.name}
+                      rating={place.rating}
+                      review={place.review}
+                      city={place.city}
+                      type={place.type}
+                      url={place.url}
+                      website={place.website}
+                      date={place.date}
                       handleClick={this.handleArticleDelete}
                       buttonText="Delete Place"
                       saved

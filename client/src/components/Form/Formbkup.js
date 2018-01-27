@@ -1,10 +1,11 @@
 import React from "react";
-import {isLoggedIn } from '../../utils/authService';
+//import {isLoggedIn } from '../../utils/authService';
 
+ 
 
 const Form = props => (
 
-    (isLoggedIn()) ? (
+ 
   <form>
  
    <div className="form-group pull-right">
@@ -54,7 +55,7 @@ const Form = props => (
     </div>
      
   </form>
-   ) : (<div></div>)
+ 
 );
 
 export default Form;

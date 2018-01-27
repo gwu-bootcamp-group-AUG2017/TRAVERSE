@@ -26,27 +26,23 @@ const Nav = () => (
       <div className="collapse navbar-collapse ">
         <ul className="nav navbar-nav">
 
-          <li>
-               {(isLoggedIn()) ? (<Link to="/">Search Places</Link>) : ( "" )}
-          </li> 
-          
-        
-            
           <li >
-                {(isLoggedIn()) ? (<Link to="/saved">Saved Places</Link>) : ( "" )}
-          </li> 
-       
-           <li>
-           {
-             (isLoggedIn()) ? (  <a href="https://www.southwest.com/">Get There</a> ) : ( "" )
-           }
-       
-           </li>
-           <li>
-           {
-             (isLoggedIn()) ? ( <a href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a href='#login' onClick={() => login()}>Log In</a> )
-           }
+               {(isLoggedIn()) ? ( <a className="lix" href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a className="lix" href='#login' onClick={() => login()}>Log In</a> ) }
+          
+              {(isLoggedIn()) ? (<Link to="/" className="lix">Search Places </Link> ) : ( "" ) }
+              {(isLoggedIn()) ? (<Link to="/saved" className="lix"> Saved Places   </Link> ) : ( "" ) }
+              {(isLoggedIn()) ? ( <a href="https://www.southwest.com/">
+                                   <img className="airline" src="../assets/img/sw4.png" alt="Smiley face" ></img></a> ) : ( "" ) }
+              {(isLoggedIn()) ? ( <a href="https://www.aa.com/">
+                                   <img className="airline" src="../assets/img/american.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
+               {(isLoggedIn()) ? ( <a href="https://www.united.com/">
+                                   <img className="airline" src="../assets/img/united.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
+      
           </li>
+
+       
+          
+          
         </ul>
       </div>
     </div>

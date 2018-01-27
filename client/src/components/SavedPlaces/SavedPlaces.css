@@ -5,45 +5,53 @@ body{background-color: khaki;
 	 }
 
 .div{
-	width: 100%;
+	width: 60%;
 	border-top: 1px solid grey;
 	border-bottom: 1px solid grey;
 	border-right: 1px solid grey;
 	border-left: 1px solid grey;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	margin-left: 20%;
 }
 
 .div2{
-	width: 100%;
-	border-top: 1px solid lightgrey;
-	border-bottom: 1px solid lightgrey;
-	border-right: 1px solid lightgrey;
-	border-left: 1px solid lightgrey;
+	width: 60%;
+	border-top: 2px solid lightgrey;
+	border-bottom: 2px solid lightgrey;
+	border-right: 2px solid lightgrey;
+	border-left: 2px solid lightgrey;
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	margin-left: 20%;
 	background-color: white;
 }
 
-.img{
-	height: 175px;
+.img2{
+	height: 150px;
 	width: 225px;
+	margin-left: 500px;
+	margin-right: 500px;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	border-left: 1px solid lightgrey;		
 }
 .place{
-	margin-left: 20px;
+	margin-left: 20%;
 	margin-right: 20px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 }
 .type{
 	margin-left: 20px;
 	margin-right: 20px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 }
 .city{
 	margin-left: 20px;
-	margin-right: 20px;
+	margin-right:  18px;
 	font-size: 16px;
 }
 .review{
@@ -51,11 +59,13 @@ body{background-color: khaki;
 .prating{
 	margin-left: 20px;
 	margin-right: 20px;
-	font-size: 16px;
+	font-size: 18px;
+	font-weight: bold;
 }
 .date{
 	margin-left: 20px;
-	font-size: 16px;
+	font-size: 18px;
+	font-weight: bold;
 }
 .card-footer{
 	width: 225px;

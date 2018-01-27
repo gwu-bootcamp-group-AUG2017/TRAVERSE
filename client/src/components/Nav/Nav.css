@@ -7,12 +7,26 @@ color: white;
 
 }
 
-li {
+.lix {
 
 text-align: center;
 font-size: 20px;
-color: red;
+color: white;
 margin-right: 5px;
-margin-left: 5px;
+margin-left: 15px;
 
 }
+
+.airlinesw{
+	border: 2px solid grey;
+	margin-left: 25px;
+	height: 55px;
+    width: 75px;
+ }
+
+.airline{
+	border: 2px solid grey;
+
+	height: 55px;
+    width: 75px;
+ }

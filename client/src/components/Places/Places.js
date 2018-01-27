@@ -5,10 +5,11 @@ import {isLoggedIn } from '../../utils/authService';
 
 
 const Places = ({ uid,name, rating, _id, review, website,url, handleClick, buttonText, date, saved, type, city }) => (
-   (isLoggedIn()) ? ( 
+     (isLoggedIn()) ? (
   <DivPlaces>
       <div className="col-lg-3 col-sm-4 portfolio-item  " >
        <div className="card-body ">
+       <p className="review">{_id}</p>
          <p className="review">{uid}</p>
         <img className="img" src={url} alt='icon' /> 
               <h4 className="card-title">
@@ -28,7 +29,7 @@ const Places = ({ uid,name, rating, _id, review, website,url, handleClick, butto
       </div>
       </div>
   </DivPlaces>
-   ) : (<div></div>)
+  ) : (<div></div>)
 );
 
 export default Places;

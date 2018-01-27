@@ -40,17 +40,16 @@ class Home extends Component {
 
     API.getPlaces({
       q: this.state.q,
-      type: "lodging",
-      type2: "Hotel",
-      price: this.state.price,
       session: localStorage.getItem('uid'),
+      type: "restaurant",
+      price: this.state.price,
     })
       .then(res =>
         this.setState({
-        hotels: res.data,
+         hotels: res.data,
          header1: "Where to Dine",
-         message: !res.data.length
-      
+         message: !res.data.length,
+         session: localStorage.getItem('uid')
             ? "No Food Found for this City"
            : ""
         })
@@ -62,14 +61,12 @@ class Home extends Component {
    getRestaurants = () => {
     API.getPlaces({
       q: this.state.q,
-      type: "restaurant",
-      type2: "Restaurant",
-      price: this.state.price,
       session: localStorage.getItem('uid'),
+      type: "restaurant",
+      price: this.state.price,
     })
        .then(res =>
         this.setState({
-         session: localStorage.getItem('uid'),
          restaurant: res.data,
          header2: "Where to Stay",
          message: !res.data.length
@@ -84,10 +81,9 @@ class Home extends Component {
   getClubs = () => {
     API.getPlaces({
       q: this.state.q,
-      type: "night_club",
-      type2: "Night Club",
-      price: this.state.price,
       session: localStorage.getItem('uid'),
+      type: "night_club",
+      price: this.state.price,
     })
       .then(res =>
         this.setState({
@@ -121,10 +117,10 @@ class Home extends Component {
 // call APIS for each data set
   handleFormSubmit = event => {
     event.preventDefault();
-    this.getHotels();
     this.getRestaurants();
     this.getWeather();
-    this.getClubs();
+    this.getHotels();
+     this.getClubs();
   };
 
 
@@ -172,9 +168,9 @@ class Home extends Component {
 
       <Row>
         <Col size="md-12"> 
-      
-              <h2 className="text-center h2 weather">{this.state.header}</h2>
-          
+          {(isLoggedIn()) ? (  
+              <h2 className="text-center h2 bg-dark">{this.state.header}</h2>
+          ) : (<div></div>)}
             {this.state.weather.length ? (
               <DivWeather>
                 {this.state.weather.map(weather => (
@@ -194,14 +190,13 @@ class Home extends Component {
           )}
 
 
-    
+          {(isLoggedIn()) ? ( 
               <h2 className="text-center rest">{this.state.header1}</h2>
-        
+          ) : (<div></div>)}
             {this.state.restaurant.length ? (
               <DivPlaces>
                 {this.state.restaurant.map(restaurant => (
                   <Places
-                    uid={restaurant.uid}
                     key={restaurant._id}
                     _id={restaurant._id}
                     type="Restaurant"
@@ -219,14 +214,13 @@ class Home extends Component {
                 ) : (<h2 className="text-center">{this.state.message}</h2>
           )}
       
-         
+          {(isLoggedIn()) ? ( 
               <h2 className="text-center club">{this.state.header2}</h2>
-         
+          ) : (<div></div>)}
             {this.state.hotels.length ? (
               <DivPlaces>
                 {this.state.hotels.map(hotels => (
                   <Places
-                    uid={hotels.uid}
                     key={hotels.id}
                     _id={hotels.id}
                     type="Hotel"
@@ -244,14 +238,13 @@ class Home extends Component {
                 ) : (<h2 className="text-center">{this.state.message}</h2>
           )}
 
-        
+          {(isLoggedIn()) ? ( 
               <h2 className="text-center hotel">{this.state.header3}</h2>
-         
+          ) : (<div></div>)}
             {this.state.nightclubs.length ? (
               <DivPlaces>
                 {this.state.nightclubs.map(nightclubs => (
                   <Places
-                    uid={nightclubs.uid}
                     key={nightclubs._id}
                     _id={nightclubs._id}
                     type="Night Club"

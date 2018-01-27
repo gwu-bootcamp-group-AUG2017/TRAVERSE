@@ -1,20 +1,20 @@
  const axios = require("axios");
  const key = require("./config.js");
 
-
 // Defining methods for the nytController
 
 // findAll searches the NYT API and returns only the entries we haven't already saved
  module.exports = {
   findAll: function(req, res) {
     var city = req.query.q;
-    var type = req.query.type;
-    var price = req.query.price;
-   
-    console.log(key.WEATHER_KEY);
+    var type = "&type=" + req.query.type;
+    var type2 = req.query.type2;
+    var price = "&maxprice=" + req.query.price;
+    var session = req.query.session;
+    var APIkey = "&key=" + key.PLACES_KEY;
 
-    var query = "query=" + city.trim() + "&type=" + type + "&maxprice=" + price +'&rankby=prominence&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4';
-  
+    var query =  "query=" + city +  type + "&limit=4" + APIkey;
+ 
     axios
       .get("https://maps.googleapis.com/maps/api/place/textsearch/json?"+query)
      .then(response => {
@@ -30,14 +30,15 @@
         for (var i = 0; i < resultLen; i++) {
           var place_id = response.data.results[i].place_id;
           axios
-          .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4" )
+          .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + APIkey )
          .then(response => {
             id ++;
             var photo = response.data.result.photos[0].photo_reference;
-            var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=254&maxheight=200&photoreference=" + photo + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4"
+            var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=254&maxheight=200&photoreference=" + photo + APIkey
  
-         somedata.hotels.push({  id : id,
-                  "type" : type,
+         somedata.hotels.push({  _id : id,
+                  "uid" : session,
+                  "type" : type2,
                   "city" : city,
                   "name" : response.data.result.name,
                   "url" : url,
@@ -47,7 +48,7 @@
 
        if (id == 3){
           axios
-          .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + "&key=AIzaSyBGxXK3pm9NbMHCeqa6TcdWJxzGfI2TwG4" )
+          .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id +APIkey )
          .then(result =>res.json(somedata.hotels))
           .catch(err => res.status(422).json(err));
         }
