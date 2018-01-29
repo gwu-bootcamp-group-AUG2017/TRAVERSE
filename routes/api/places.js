@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const placesController = require("../../controllers/placesController");
 
-// Matches with "/api/nyt"
+// Matches with "/api/places"
 router
   .route("/")
-  .get(placesController.findAll)
+  .get(placesController.findPlaces)
  
 module.exports = router;

@@ -1,55 +1,67 @@
  const axios = require("axios");
  const key = require("./config.js");
-
-// Defining methods for the nytController
-
-// findAll searches the NYT API and returns only the entries we haven't already saved
- module.exports = {
-  findAll: function(req, res) {
-     var query = req.query.q;
-     console.log(query);
+// getWeather calls openweathermap API to get 6 day forecast 
+module.exports = {
+  getWeather: function(req, res) {
+// GET API keys from config file and build query string  
+// replace these with a database call 
      var APIkey = "&APPID=" + key.WEATHER_KEY;
- //    console.log(APIkey);
-//    query = query.replace(",","+");
-//    query = query.substring(5);
-//    var quer= query.replace(",", "+");
-//    quer = quer.replace("\"", " ");
-//    quer= quer.replace("}", "");
-    
-//    db.Article
-    query = 'q=' + query.trim() + '&units=imperial&cnt=6' + APIkey;
-  
+     var Geokey = key.GEO_KEY;
+     var geoQuery = "address=" + req.query.q + "&key=" + Geokey;
 
-    axios
-        .get("http://api.openweathermap.org/data/2.5/forecast/daily?"+query)
-        .then(response => { 
+// use geocode to get lat and long coordiantes for weather API 
+        axios
+            .get("https://maps.googleapis.com/maps/api/geocode/json?"+geoQuery)
+            .then(response => {
+
+ // build query string for weather API CALL
+            var lat = response.data.results[0].geometry.location.lat;
+            var lng = response.data.results[0].geometry.location.lng;
+            var  query = "lat=" + lat + "&lon=" + lng + '&units=imperial&cnt=6' + APIkey; 
+
+ // call weather API
+        axios
+            .get("http://api.openweathermap.org/data/2.5/forecast/daily?"+query)
+            .then(response => { 
+
+             // obj to return results            
              var somedata = {
                   weather: []
               };
+              // dummy id field
               var id = 0;
-    
+
+// loop thru results and push data for each day to return obj    
               for (var i = 0; i < response.data.list.length; i++) {
                   id ++;
+                  // format date 
                   var myDate = new Date(response.data.list[i].dt * 1000);
                   var x = myDate.toDateString();
                   var y = x.length-4;
-                  var iconCode =response.data.list[i].weather[0].icon;
-                  var url = "http://openweathermap.org/img/w/" + iconCode + ".png";
-                  somedata.weather.push({  id : id,
-                      "day" :  x.substring(0, y),
-                      "max_temp" : Math.round(response.data.list[i].temp.max),
-                      "min_temp" : Math.round(response.data.list[i].temp.min),
-                      "main" : response.data.list[i].weather[0].main,
-                      "desc" : response.data.list[i].weather[0].description,
-                      "icon" : url });
-                 if (id == 5){
+                  // format icon max temp min temp
+                  var iconCode = response.data.list[i].weather[0].icon;
+                  var icon = "http://openweathermap.org/img/w/" + iconCode + ".png";
+                  var maxtemp = Math.round(response.data.list[i].temp.max);
+                  var mintemp = Math.round(response.data.list[i].temp.min);
+
+                  // push data to object for each day
+                  somedata.weather.push({  _id : id,
+                      "day" :         x.substring(0, y),
+                      "max_temp" :    maxtemp,
+                      "min_temp" :    mintemp,
+                      "main" :        response.data.list[i].weather[0].main,
+                      "desc" :        response.data.list[i].weather[0].description,
+                      "icon" :        icon });
+                  // return weather data to client
+                  if (id == 5){
+                    // recall and return data - must be a better way
                     axios
-                        .get("http://api.openweathermap.org/data/2.5/forecast/daily?"+query)
-                       .then(result =>res.json(somedata.weather))
-                       .catch(err => res.status(422).json(err));
-                 } 
-  
+                      .get("http://api.openweathermap.org/data/2.5/forecast/daily?"+query)
+                      .then(result =>res.json(somedata.weather))
+                      .catch(err => res.status(422).json(err));
+                  } 
               }
-         })
+        })
+      });
   }
 }

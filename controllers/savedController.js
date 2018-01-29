@@ -30,7 +30,7 @@ module.exports = {
     db.Places
       .create(place)
       .then(dbPlace => res.json(dbPlace))
-       .catch(console.log(place));
+     .catch(err => res.status(422).json(err));
   },
   
   remove: function(req, res) {

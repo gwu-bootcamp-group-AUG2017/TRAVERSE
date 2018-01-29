@@ -33,13 +33,14 @@ const Nav = () => (
               {(isLoggedIn()) ? (<Link to="/saved" className="lix"> Saved Places   </Link> ) : ( "" ) }
               {(isLoggedIn()) ? ( <a href="https://www.southwest.com/">
                                    <img className="airline" src="../assets/img/sw4.png" alt="Smiley face" ></img></a> ) : ( "" ) }
-              {(isLoggedIn()) ? ( <a href="https://www.aa.com/">
-                                   <img className="airline" src="../assets/img/american.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
                {(isLoggedIn()) ? ( <a href="https://www.united.com/">
                                    <img className="airline" src="../assets/img/united.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
                 {(isLoggedIn()) ? ( <a href="https://www.hertz.com/">
                                    <img className="airline" src="../assets/img/hertz.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }                   
       
+                  {(isLoggedIn()) ? ( <a href="https://www.ticketmaster.com//">
+                                   <img className="airline" src="../assets/img/tickets.png" alt="Smiley face" ></img></a> ) : ( "" ) }
+
           </li>
 
        
