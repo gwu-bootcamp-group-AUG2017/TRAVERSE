@@ -36,7 +36,7 @@ class Saved extends Component {
        
         <Row>
           <Col size="md-12">
-            <Panel title="My Saved Places" >
+             <h2 className="text-center h2 hplaces">My Saved Places</h2>
               {this.state.places.length ? (
                 <Row>
                   {this.state.places.map(place => (
@@ -61,7 +61,7 @@ class Saved extends Component {
               ) : (
                 <h2 className="text-center">No Saved Places</h2>
               )}
-            </Panel>
+          
           </Col>
         </Row>
     

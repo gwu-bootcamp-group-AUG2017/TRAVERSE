@@ -8,7 +8,6 @@ const SavedPlaces = ({ name, rating, _id, review, website,url,handleClick, butto
  <Div className="div"> 
         
     <div className="div"></div>
-
     <div><img className="img2" src={url} alt='icon' /></div>   
     <div className="place" >{name}</div>
     <div className="type" >{type} in {city}</div>
@@ -17,9 +16,9 @@ const SavedPlaces = ({ name, rating, _id, review, website,url,handleClick, butto
     <div className="div2">{review}</div>
 
     <span className="btn-group pull-right">
-         <a className="btn btnplace  text-center" href={website} rel="noopener noreferrer" 
-            target="_blank">Vist Their Website</a>
-         <button onClick={() => handleClick(_id)} className=" btn btnclass ">
+         <a className="btn btn-sm" href={website} rel="noopener noreferrer" 
+            target="_blank">Vist Website</a>
+         <button onClick={() => handleClick(_id)} className="btn btndelete btn-sm">
          {buttonText}</button>
     </span>
     

@@ -37,10 +37,25 @@ body {
  
 }
 
-.btn-group {
-   display:inline-block;
-   margin-left: 35%;
+.input-field {
+  background-color: #B0C4DE;
+  width: 275px;
 
+}
+
+.input-text {
+  text-align: center;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 0px;
+  font-weight: bold;
+ 
+}
+
+.btn-group {
+   margin-left: 35%;
+   margin-top: 15px;
+ 
 }
 
 .border-class
@@ -49,6 +64,7 @@ body {
   background-color: #fffacd;
   margin:20px;
   padding:20px;
+
 }
 
 h1 {
@@ -82,9 +98,8 @@ h1 {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
   width: 27%;
-  margin-top:1%;
   color: white;
-  background-color: maroon;
+  background-color: red;
   margin-bottom: 0%;
  
 }
@@ -93,9 +108,8 @@ h1 {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
   width: 27%;
-  margin-top:1%;
-  color: white;
-  background-color: blue;
+  color: black;
+  background-color: white;
   margin-bottom: 0%;
  
 }
@@ -104,9 +118,8 @@ h1 {
   font-family:'Sree Krushnadevaraya', serif;
   font-size: 25px;
   width: 27%;
-  margin-top:1%;
   color: white;
-  background-color: purple;
+  background-color: blue;
   margin-bottom: 0%;
  
 }
@@ -118,29 +131,28 @@ h3 {
 
 .h4 {
   font-family:'Sree Krushnadevaraya', serif;
-  font-size: 35px ;
-  color: red;
+  font-size: 25px ;
+  color: blue;
   font-weight: bold;
+
 }
 
 
 .btn {
+  background-color: khaki;
+  color: black;
+  width: 110px;
+  border-color: black;
+}
+
+.btn_submit {
+  margin-top: 15px;
   background-color: blue;
   color: white;
+  width: 110px;
   border-color: black;
 }
 
-.btnplace {
-  background-color: red;
-  color: white;
-  border-color: black;
-}
-
-.btnclass {
-  background-color: black;
-  color: white;
-  border-color: black;
-}
 
 .navbar-brand {
 

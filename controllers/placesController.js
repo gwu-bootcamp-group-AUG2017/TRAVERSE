@@ -19,13 +19,13 @@ module.exports = {
     var query =  "query=" + city +  type + "&limit=4" + APIkey;
 
 // call textsearch API using query string 
-    axios
-      .get("https://maps.googleapis.com/maps/api/place/textsearch/json?"+query)
-      .then(response => {
-          var resultLen = 4;
-          if (response.data.results.length < 4) {
-            resultLen = response.data.results.length;
-          }
+  axios
+    .get("https://maps.googleapis.com/maps/api/place/textsearch/json?"+query)
+    .then(response => {
+        var resultLen = 4;
+        if (response.data.results.length < 4) {
+             resultLen = response.data.results.length;
+        }
  
         // obj to return results  
         var somedata = {
@@ -39,42 +39,37 @@ module.exports = {
         for (var i = 0; i < resultLen; i++) {
           var place_id = response.data.results[i].place_id;
           axios
-          .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + APIkey )
-         .then(response => {
+            .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id + APIkey )
+            .then(response => {
             id ++;
-            if (response.data.result.photos == undefined){
-      //         console.log("crap");
-     //          console.log(response.data.results[i]);
-    //            photo = response.data.results[i].photos[0].photo_reference;
-            } else {  
-      //                  console.log("lot of crap");
-      //                  console.log(response.data.results[i]);
-      //                   photo = response.data.result.photos[0].photo_reference;
-           };
-           
+            // maybe we need this for later ??
+//            if (response.data.result.photos == undefined){
+//     
+//           } else {  
+//     
+//           };
+            // format photo icon           
             var photo = response.data.result.photos[0].photo_reference;
             var url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=254&maxheight=200&photoreference=" + photo + APIkey
-         
-         somedata.places.push({  _id : id,
-                  "uid" :     session,
-                  "type" :    type2,
-                  "city" :    city,
-                  "name" :    response.data.result.name,
-                  "url" :     url,
-                  "rating" :  response.data.result.rating,
-                  "website" : response.data.result.website,
-                  "review" :  response.data.result.reviews[0].text});
-
-       if (id == 3){
-           axios
-          .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id +APIkey )
-          .then(result =>res.json(somedata.places))
-          .catch(err => res.status(422).json(err));
+// load each place into object          
+            somedata.places.push({  _id : id,
+                "uid" :     session,
+                "type" :    type2,
+                "city" :    city,
+                "name" :    response.data.result.name,
+                "url" :     url,
+                "rating" :  response.data.result.rating,
+                "website" : response.data.result.website,
+                "review" :  response.data.result.reviews[0].text});
+// complete return data with fake call 
+              if (id == 3){
+                axios
+                  .get("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + place_id +APIkey )
+                  .then(result =>res.json(somedata.places))
+                  .catch(err => res.status(422).json(err));
+              }
+            });
         }
-         });
-
-        }
-
-      });
+    });
   }
 };

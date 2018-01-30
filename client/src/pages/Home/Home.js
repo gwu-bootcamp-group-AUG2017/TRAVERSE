@@ -220,7 +220,7 @@ class Home extends Component {
           )}
       
          
-              <h2 className="text-center club">{this.state.header2}</h2>
+              <h2 className="text-center hotel">{this.state.header2}</h2>
          
             {this.state.hotels.length ? (
               <DivPlaces>
@@ -245,7 +245,7 @@ class Home extends Component {
           )}
 
         
-              <h2 className="text-center hotel">{this.state.header3}</h2>
+              <h2 className="text-center club">{this.state.header3}</h2>
          
             {this.state.nightclubs.length ? (
               <DivPlaces>

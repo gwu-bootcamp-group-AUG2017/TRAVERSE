@@ -1,30 +1,32 @@
 .rowC{display:flex; flex-direction:row;background-color: #DEB887;
-	border-right: 1px solid lightgrey;
+	border: 1px lightblue solid;
 	 }
-
 .img{
 	height: 175px;
-	width: 225px;
+	width: 240px;
+	border: 2px black solid;
 }
 .name{
-	width: 225px;
-	font-size: 24px;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 3px;
 }
 .review{
-	width: 225px;
+	margin-top: 3px;
+	font-size: 16px;
+	background-color: white;
+	border-top: 2px lightgrey solid;
+	border-bottom: 2px lightgrey solid;
+	border-right: 2px lightgrey solid;
+	border-left: 2px lightgrey solid;
 }
 .rating{
-	width: 225px;
+	font-weight: bold;
+	width: 240px;
+	margin-top: 3px;
 }
-.card-footer{
-	width: 225px;
-	backgrwound-color: #f2f2f2;
-}
-
-.btn-primary{
-	width: 225px;
-	text-align: center;
-
-	color: blue;
-	
+.btnplace {
+    background-color: blue;
+    color: white;
+    border-color: black;
 }
