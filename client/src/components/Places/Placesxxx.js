@@ -15,8 +15,14 @@ const Places = ({ uid,name, rating, _id, review, website,url, handleClick, butto
         <div className="name" >{name}</div>
         <div className="rating">Rating: {rating}</div>
         <div className="review">{review}</div>
-  
-        <span className="btn-group">
+          <input type="checkbox" className="read-more-state" id="{name}" />
+         <div className="read-more-wrap">
+            <p className="read-more-target">{review}</p>
+             </div>
+           <label htmlFor="name" className="read-more-trigger"></label>
+             </div>
+
+         <span className="btn-group">
         <a className="btn btn-sm" href={website} rel="noopener noreferrer" target="_blank">
           Vist Website
         </a>

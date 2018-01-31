@@ -161,10 +161,9 @@ class Home extends Component {
          
             <Form
               handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-             q={this.state.q}
-            price={this.state.price}
-          
+              handleFormSubmit={this.handleFormSubmit}
+              q={this.state.q}
+              price={this.state.price}
             />
          
         </Col>
@@ -173,7 +172,7 @@ class Home extends Component {
       <Row>
         <Col size="md-12"> 
       
-              <h2 className="text-center h2 weather">{this.state.header}</h2>
+             <h2 className="text-center h2 weather">{this.state.header}</h2>
           
             {this.state.weather.length ? (
               <DivWeather>

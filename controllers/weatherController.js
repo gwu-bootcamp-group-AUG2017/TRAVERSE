@@ -1,5 +1,6 @@
  const axios = require("axios");
  const key = require("./config.js");
+ const db = require("../models");
 // getWeather calls openweathermap API to get 6 day forecast 
 module.exports = {
   getWeather: function(req, res) {

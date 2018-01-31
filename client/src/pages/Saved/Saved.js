@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Panel from "../../components/Panel";
+
 import SavedPlaces from "../../components/SavedPlaces";
 import API from "../../utils/API";
 import { Col, Row, Container} from "../../components/Grid";

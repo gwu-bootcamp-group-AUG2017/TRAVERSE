@@ -1,3 +1,4 @@
 module.exports = {
-  Places: require("./places")
+  Places: require("./places"),
+  Keys: require("./keys")
 };
