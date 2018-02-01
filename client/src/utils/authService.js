@@ -11,7 +11,8 @@ const IDP = 'identity-provider';
 var auth = new auth0.WebAuth({
   domain: 'hilldev.auth0.com',
   clientID: 'g2Tg8W1DvY0J1lp42QQD5bApbU7wrMXQ',
-  redirectUri: 'http://localhost:3000/callback',
+//  redirectUri: 'http://localhost:3000/callback',
+   redirectUri: 'https://traverse2.herokuapp.com/callback',
   audience: 'https://hilldev.auth0.com/userinfo',
   responseType: 'token id_token',
   scope: 'openid profile'
