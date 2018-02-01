@@ -27,7 +27,7 @@ const Nav = () => (
         <ul className="nav navbar-nav">
 
           <li >
-              {(isLoggedIn()) ? ( <a className="lix" href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a className="lix" href='#login' onClick={() => login()}>Log In</a> ) }
+              {(isLoggedIn()) ? ( <a className="btn btn-md btn-logout" href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a className="btn btn-md btn-login" href='#login' onClick={() => login()}>Log In</a> ) }
           
               {(isLoggedIn()) ? (<Link to="/" className="lix">Search Places </Link> ) : ( "" ) }
               {(isLoggedIn()) ? (<Link to="/saved" className="lix"> Saved Places   </Link> ) : ( "" ) }
@@ -35,11 +35,8 @@ const Nav = () => (
                                    <img className="airline" src="../assets/img/sw4.png" alt="Smiley face" ></img></a> ) : ( "" ) }
               {(isLoggedIn()) ? ( <a href="https://www.united.com/">
                                    <img className="airline" src="../assets/img/united.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
-              {(isLoggedIn()) ? ( <a href="https://www.hertz.com/">
-                                   <img className="airline" src="../assets/img/hertz.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }                   
-      
               {(isLoggedIn()) ? ( <a href="https://www.ticketmaster.com//">
-                                   <img className="airline" src="../assets/img/tickets.png" alt="Smiley face" ></img></a> ) : ( "" ) }
+                                   <img className="airline" src="../assets/img/tickets.png" alt="Smiley face" ></img></a>) : ( "" ) }
 
           </li>
 
@@ -53,4 +50,5 @@ const Nav = () => (
 );
 
 export default Nav;
+
 

@@ -3,6 +3,8 @@
  const db = require("../models");
 // getWeather calls openweathermap API to get 6 day forecast 
 module.exports = {
+ 
+
   getWeather: function(req, res) {
 // GET API keys from config file and build query string  
 // replace these with a database call 
@@ -10,6 +12,7 @@ module.exports = {
      var Geokey = key.GEO_KEY;
      var geoQuery = "address=" + req.query.q + "&key=" + Geokey;
 
+      
 // use geocode to get lat and long coordiantes for weather API 
         axios
             .get("https://maps.googleapis.com/maps/api/geocode/json?"+geoQuery)

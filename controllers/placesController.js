@@ -23,7 +23,7 @@ module.exports = {
         query =  "query=" + city +  type  + "&limit=8&rankby=prominence" + APIkey;
     }
     var geoQuery = "address=" + req.query.q + "&key=" + Geokey;
-    console.log(query);
+ 
     // use geocode to get lat and long coordiantes for weather API 
         axios
             .get("https://maps.googleapis.com/maps/api/geocode/json?"+geoQuery)

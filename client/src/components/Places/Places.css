@@ -1,31 +1,31 @@
 .rowC{display:flex; flex-direction:row;background-color: #DEB887;
-	border: 1px lightblue solid;
-	 }
+  border: 1px lightblue solid;
+   }
 .img{
-	height: 175px;
-	width: 240px;
-	border: 2px black solid;
+  height: 175px;
+  width: 240px;
+  border: 2px black solid;
 }
 .name{
-	font-size: 18px;
-	font-weight: bold;
-	margin-top: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 3px;
 }
 .review{
-	margin-top: 3px;
-	font-size: 16px;
-	background-color: white;
-	border-top: 2px lightgrey solid;
-	border-bottom: 2px lightgrey solid;
-	border-right: 2px lightgrey solid;
-	border-left: 2px lightgrey solid;
+  margin-top: 3px;
+  font-size: 16px;
+  background-color: white;
+  border-top: 2px lightgrey solid;
+  border-bottom: 2px lightgrey solid;
+  border-right: 2px lightgrey solid;
+  border-left: 2px lightgrey solid;
   height: 275px;
 
 }
 .rating{
-	font-weight: bold;
-	width: 240px;
-	margin-top: 3px;
+  font-weight: bold;
+  width: 240px;
+  margin-top: 3px;
 }
 .btnplace {
     background-color: blue;

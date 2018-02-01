@@ -4,6 +4,8 @@ const weatherController = require("../../controllers/weatherController");
 // Matches with "/api/weather"
 router
   .route("/")
-  .get(weatherController.getWeather)
+  .get(weatherController.getWeather);
  
+
+    
 module.exports = router;

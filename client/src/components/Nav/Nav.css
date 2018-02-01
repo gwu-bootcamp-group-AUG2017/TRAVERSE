@@ -17,16 +17,32 @@ margin-left: 15px;
 
 }
 
+.btn-login {
+	background-color: black;
+	color: white;
+	margin-right: 5px;
+	margin-left: 15px;
+} 
+
+.btn-logout {
+	background-color: white;
+	color: black;
+	margin-right: 5px;
+	margin-left: 15px;
+} 
+
+
+
 .airlinesw{
 	border: 1px solid black;
 	margin-left: 25px;
 	height: 50px;
-    width: 65px;
+    width: 50px;
  }
 
 .airline{
 	border: 1px solid black;
 
 	height: 50px;
-    width: 65px;
+    width: 50px;
  }

@@ -4,7 +4,7 @@ import Places from "../../components/Places";
 import Weather from "../../components/Weather";
 import API from "../../utils/API";
 import { Col,Row, Container, DivPlaces, DivWeather } from "../../components/Grid";
-//import { isLoggedIn } from '../../utils/authService';
+import { isLoggedIn } from '../../utils/authService';
 
 // declaare state variables
 class Home extends Component {
@@ -171,9 +171,9 @@ class Home extends Component {
 
       <Row>
         <Col size="md-12"> 
-      
-             <h2 className="text-center h2 weather">{this.state.header}</h2>
-          
+            {(isLoggedIn()) ? (
+              <h2 className="text-center h2 weather">{this.state.header}</h2>
+            ) : (<div></div>)}
             {this.state.weather.length ? (
               <DivWeather>
                 {this.state.weather.map(weather => (
@@ -193,9 +193,10 @@ class Home extends Component {
           )}
 
 
-    
+            {(isLoggedIn()) ? (
               <h2 className="text-center rest">{this.state.header1}</h2>
-        
+            ) : (<div></div>)}
+
             {this.state.restaurant.length ? (
               <DivPlaces>
                 {this.state.restaurant.map(restaurant => (
@@ -218,8 +219,10 @@ class Home extends Component {
                 ) : (<h2 className="text-center">{this.state.message}</h2>
           )}
       
-         
-              <h2 className="text-center hotel">{this.state.header2}</h2>
+            {(isLoggedIn()) ? (
+               <h2 className="text-center hotel">{this.state.header2}</h2>
+            ) : (<div></div>)} 
+           
          
             {this.state.hotels.length ? (
               <DivPlaces>
@@ -243,9 +246,10 @@ class Home extends Component {
                 ) : (<h2 className="text-center">{this.state.message}</h2>
           )}
 
-        
+            {(isLoggedIn()) ? (
               <h2 className="text-center club">{this.state.header3}</h2>
-         
+            ) : (<div></div>)}
+
             {this.state.nightclubs.length ? (
               <DivPlaces>
                 {this.state.nightclubs.map(nightclubs => (
