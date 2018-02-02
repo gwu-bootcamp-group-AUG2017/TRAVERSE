@@ -108,6 +108,8 @@ class Home extends Component {
     })
       .then(res =>
         this.setState({
+          q: "",
+          price: "0",
          weather: res.data,
          header: this.state.q + " Forecast",
          message: !res.data.length
@@ -138,6 +140,7 @@ class Home extends Component {
 // save hotel on submit
   handleHotelSave = id => {
     const hotels = this.state.hotels.find(hotels => hotels._id === id);
+    console.log(hotels);
     API.savePlaces(hotels).then(res => this.getHotels());
   
   };
@@ -229,8 +232,8 @@ class Home extends Component {
                 {this.state.hotels.map(hotels => (
                   <Places
                     uid={hotels.uid}
-                    key={hotels.id}
-                    _id={hotels.id}
+                    key={hotels._id}
+                    _id={hotels._id}
                     type="Hotel"
                     city={this.state.q}
                     name={hotels.name}

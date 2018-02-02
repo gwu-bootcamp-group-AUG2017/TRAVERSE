@@ -4,12 +4,12 @@ import filterParams from "./filterParams";
 export default {
  
   getPlaces: function(params) {
+      
         return axios.get("/api/places", { params: filterParams(params) });
   },
 
   getKeys: function(params) {
-        console.log(params);
-        console.log("yuck");
+   
         return axios.get("/api/weather", { params: filterParams(params) });
   },
 
@@ -19,7 +19,7 @@ export default {
   
   // Gets all saved articles
   getSavedPlaces: function(params) {
-         console.log(params);
+  
         return axios.get("/api/savedplaces", { params: filterParams(params) });
  
   },

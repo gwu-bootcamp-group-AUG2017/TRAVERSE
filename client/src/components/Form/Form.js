@@ -28,7 +28,8 @@ const Form = props => (
          name="price" 
          required
          onChange={props.handleInputChange} >
-        <option defaultValue value="1">Cheap</option>
+        <option value="0"></option>
+        <option value="1" selected>Cheap </option>
         <option value="2">Moderate</option>
         <option value="3">Expensive</option>
         <option value="4">I got a Raise</option>
