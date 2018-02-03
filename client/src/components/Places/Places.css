@@ -1,16 +1,19 @@
 .rowC{display:flex; flex-direction:row;background-color: #DEB887;
   border: 1px lightblue solid;
-   }
+}
+
 .img{
   height: 175px;
   width: 240px;
   border: 2px black solid;
 }
+
 .name{
   font-size: 18px;
   font-weight: bold;
   margin-top: 3px;
 }
+
 .review{
   margin-top: 3px;
   font-size: 16px;
@@ -20,51 +23,15 @@
   border-right: 2px lightgrey solid;
   border-left: 2px lightgrey solid;
   height: 275px;
-
 }
+
 .rating{
   font-weight: bold;
   width: 240px;
   margin-top: 3px;
 }
 .btnplace {
-    background-color: blue;
-    color: white;
-    border-color: black;
-}
-
-.read-more-state {
-  display: none;
-}
-
-.read-more-target {
-  opacity: 0;
-  max-height: 0;
-  font-size: 0;
-  transition: .25s ease;
-}
-
-.read-more-state:checked ~ .read-more-wrap .read-more-target {
-  opacity: 1;
-  font-size: inherit;
-  max-height: 999em;
-}
-
-.read-more-state ~ .read-more-trigger:before {
-  content: 'Show more';
-}
-
-.read-more-state:checked ~ .read-more-trigger:before {
-  content: 'Show less';
-}
-
-.read-more-trigger {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 .5em;
-  color: #666;
-  font-size: .9em;
-  line-height: 2;
-  border: 1px solid #ddd;
-  border-radius: .25em;
+  background-color: blue;
+  color: white;
+  border-color: black;
 }

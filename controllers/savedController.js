@@ -1,5 +1,4 @@
 const db = require("../models");
-
 // Defining methods for the savedController
 module.exports = {
   
@@ -31,6 +30,7 @@ module.exports = {
         url: req.body.url,
         review: req.body.review
       };
+
 // now save data 
     db.Places
       .create(place)

@@ -18,17 +18,17 @@ const Nav = () => (
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
+        
         <Link className="navbar-brand " to="/">
           TRAVERSE - Eat Sleep Play
         </Link>
 
       </div>
+
       <div className="collapse navbar-collapse ">
         <ul className="nav navbar-nav">
-
           <li >
               {(isLoggedIn()) ? ( <a className="btn btn-md btn-logout" href='#logout' onClick={() => logout()}>Log out </a> ) : ( <a className="btn btn-md btn-login" href='#login' onClick={() => login()}>Log In</a> ) }
-          
               {(isLoggedIn()) ? (<Link to="/" className="lix">Search Places </Link> ) : ( "" ) }
               {(isLoggedIn()) ? (<Link to="/saved" className="lix"> Saved Places   </Link> ) : ( "" ) }
               {(isLoggedIn()) ? ( <a href="https://www.southwest.com/">
@@ -37,18 +37,12 @@ const Nav = () => (
                                    <img className="airline" src="../assets/img/united.jpeg" alt="Smiley face" ></img></a> ) : ( "" ) }
               {(isLoggedIn()) ? ( <a href="https://www.ticketmaster.com//">
                                    <img className="airline" src="../assets/img/tickets.png" alt="Smiley face" ></img></a>) : ( "" ) }
-
           </li>
-
-       
-          
-          
         </ul>
       </div>
     </div>
   </nav>
 );
-
 export default Nav;
 
 

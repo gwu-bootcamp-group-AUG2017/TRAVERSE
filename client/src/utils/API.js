@@ -2,34 +2,31 @@ import axios from "axios";
 import filterParams from "./filterParams";
 
 export default {
- 
+
+// get places data for location
   getPlaces: function(params) {
       
         return axios.get("/api/places", { params: filterParams(params) });
   },
 
-  getKeys: function(params) {
-   
-        return axios.get("/api/weather", { params: filterParams(params) });
-  },
-
+//gets 6 day weather forecast for place
   getWeather: function(params) {
         return axios.get("/api/weather", { params: filterParams(params) });
   },
   
-  // Gets all saved articles
+// Gets all saved places by user id
   getSavedPlaces: function(params) {
-  
-        return axios.get("/api/savedplaces", { params: filterParams(params) });
+      return axios.get("/api/savedplaces", { params: filterParams(params) });
  
   },
  
-  // Deletes the saved article with the given id
+// Deletes the saved place with the given id
   deletePlace: function(id) {
-        return axios.delete("/api/savedplaces/" + id);
+      return axios.delete("/api/savedplaces/" + id);
   },
-  // Saves an article to the database
-  savePlaces: function(articleData,params) {
-        return axios.post("/api/savedplaces", articleData);
+
+// Saves an place to the database
+  savePlaces: function(placeData,params) {
+      return axios.post("/api/savedplaces", placeData);
   }
 };
