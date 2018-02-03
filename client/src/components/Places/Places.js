@@ -7,7 +7,7 @@ import {isLoggedIn } from '../../utils/authService';
 
 const Places = ({ uid,name, rating, _id, review, website,url, handleClick, buttonText, date, saved, type, city }) => (
      (isLoggedIn()) ? (
-  <DivPlaces>
+  <DivPlaces >
       <div className="col-lg-3 col-sm-4 portfolio-item" >
        <div className="card-body">
    

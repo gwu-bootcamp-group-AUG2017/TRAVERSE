@@ -133,7 +133,7 @@ class Home extends Component {
 // save restaurant on submit
   handleRestSave = id => {
     const restaurant = this.state.restaurant.find(restaurant => restaurant._id === id);
-    API.savePlaces(restaurant).then(res => this.getRestaurants());
+    API.savePlaces(restaurant).then(res => alert("Restaurant Saved!"));
   };
 
 
@@ -141,7 +141,7 @@ class Home extends Component {
   handleHotelSave = id => {
     const hotels = this.state.hotels.find(hotels => hotels._id === id);
     console.log(hotels);
-    API.savePlaces(hotels).then(res => this.getHotels());
+    API.savePlaces(hotels).then(res => alert("Hotel Saved!"));
   
   };
 
@@ -149,7 +149,7 @@ class Home extends Component {
 // save nightclub on submit
    handleClubSave = id => {
     const nightclubs = this.state.nightclubs.find(nightclubs => nightclubs._id === id);
-    API.savePlaces(nightclubs).then(res => this.getClubs());
+    API.savePlaces(nightclubs).then(res => alert("NightClub Saved!"));
   
   };
 
@@ -173,7 +173,7 @@ class Home extends Component {
       </Row>
 
       <Row>
-        <Col size="md-12"> 
+        <Col size="md-12">
             {(isLoggedIn()) ? (
               <h2 className="text-center h2 weather">{this.state.header}</h2>
             ) : (<div></div>)}

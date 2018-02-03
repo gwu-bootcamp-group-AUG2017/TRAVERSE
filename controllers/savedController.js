@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the articleController
+// Defining methods for the savedController
 module.exports = {
   
 // get data by user id

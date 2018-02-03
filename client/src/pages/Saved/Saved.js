@@ -27,7 +27,9 @@ class Saved extends Component {
   };
 
   handleArticleDelete = id => {
-    API.deletePlace(id).then(res => this.getSavedPlaces());
+    API.deletePlace(id)
+    .then(res => alert("Place Deleted!"))
+    .then(res => this.getSavedPlaces());
   };
 
   render() {
