@@ -32,6 +32,21 @@ Uses Google GeoCoder API to translate city/state into long/lat coordinates for O
 Uses Google Places API textseach to get place ids for criteria and then loop through results 
 and use Google Places details to get detail data for each place (name, rating, url, photo, review) whihc is then returned to the
 
+Backend:
+
+express to serve routes
+
+axios to do API and database calls
+
+Google Places API to retrieve loaction data for Resturants Hotels and Night Clubs within a price range
+
+Google Geocoder API to translate city/state to long/lat coordinates 
+
+OpenWeatherMap API to retrieve 6 day weather forecast for a location
+
+Frontend:
+
+React-js to 
 
 
 
