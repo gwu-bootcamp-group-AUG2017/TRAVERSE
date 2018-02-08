@@ -61,30 +61,26 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 #### The `/articles` route renders all the news articles
 ![image](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
 ![image](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
-#### Weather
-[#### Weather](https://user-images.githubusercontent.com/26799439/35977634-a1726d22-0cb1-11e8-9c1a-01e285cb13f4.png)
-#### Restaurants
+
+[Search](https://user-images.githubusercontent.com/26799439/35977605-8efb0afa-0cb1-11e8-8f9d-d6f7a1cc49d1.png)
+
+
+[Weather](https://user-images.githubusercontent.com/26799439/35977634-a1726d22-0cb1-11e8-9c1a-01e285cb13f4.png)
+
 [Restaurants](https://user-images.githubusercontent.com/26799439/35977656-b0fa9e36-0cb1-11e8-8a0d-e8165e0ca1b9.png)
-#### Hotels
+
 [Hotels](https://user-images.githubusercontent.com/26799439/35977671-bfa0d7e8-0cb1-11e8-853e-2eb54c9212c8.png)
-#### Night Clubs
+
 [Night Clubs](https://user-images.githubusercontent.com/26799439/35977687-c9192ca8-0cb1-11e8-92e8-ab847a0280c5.png)
-#### Save Place
+
 [Save Place](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
-#### View Saved Places
+
 [View Saved Places](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
-#### Delete Place
+
 [Delete Place from mongodb ](https://user-images.githubusercontent.com/26799439/35977779-fc171372-0cb1-11e8-856e-91ac791549fd.png)
-#### Logout
+
 [Logout](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
 
-
-#### Note that the web scraping occurs on the `/scrape` route.
-#### On visiting the index route, `/`, express redirects to `/scrape` and then `/articles` routes
-
-
-![image](https://user-images.githubusercontent.com/26799439/35977605-8efb0afa-0cb1-11e8-8f9d-d6f7a1cc49d1.png)
-![image](https://user-images.githubusercontent.com/26799439/35977634-a1726d22-0cb1-11e8-9c1a-01e285cb13f4.png)
 
 
 
