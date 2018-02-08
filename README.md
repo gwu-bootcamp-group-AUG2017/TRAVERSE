@@ -59,7 +59,9 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 
 ## Screenshots
 #### The `/articles` route renders all the news articles
-![All Articles](/screenshots/content.png)
+![image](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
+![image](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
+
 
 #### Click on the globe icon to view the content.
 ![Article Content](/screenshots/article.png)
