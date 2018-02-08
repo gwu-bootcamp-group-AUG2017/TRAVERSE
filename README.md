@@ -72,7 +72,7 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 #### Click the Thumbs up/down icon to view comments
 ![View Comment](/screenshots/view-comment.png)
 
-[Resturants](https://user-images.githubusercontent.com/26799439/35977656-b0fa9e36-0cb1-11e8-8a0d-e8165e0ca1b9.png)
+[Restaurants](https://user-images.githubusercontent.com/26799439/35977656-b0fa9e36-0cb1-11e8-8a0d-e8165e0ca1b9.png)
 
 [Hotels](https://user-images.githubusercontent.com/26799439/35977671-bfa0d7e8-0cb1-11e8-853e-2eb54c9212c8.png)
 
