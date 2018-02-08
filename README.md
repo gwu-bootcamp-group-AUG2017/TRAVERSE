@@ -74,7 +74,7 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 
 
 #### Click the Delete button to remove rude comments via the `remove/comment/:id` route
-![Delete Comment](![image](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)!
+![Delete Comment](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
 
 #### Note that the web scraping occurs on the `/scrape` route.
 #### On visiting the index route, `/`, express redirects to `/scrape` and then `/articles` routes
