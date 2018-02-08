@@ -72,6 +72,8 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 #### Click the Thumbs up/down icon to view comments
 ![View Comment](/screenshots/view-comment.png)
 
+[Save Place](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
+[image](https://user-images.githubusercontent.com/26799439/35977702-d6b3d26e-0cb1-11e8-8e26-13f84d58ed50.png)
 [View Saved Places](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
 
 
@@ -96,7 +98,5 @@ Please check out the deployed version in Heroku [here](https://user-images.githu
 ![image](https://user-images.githubusercontent.com/26799439/35977671-bfa0d7e8-0cb1-11e8-853e-2eb54c9212c8.png)
 ![image](https://user-images.githubusercontent.com/26799439/35977687-c9192ca8-0cb1-11e8-92e8-ab847a0280c5.png)
 ![image](https://user-images.githubusercontent.com/26799439/35977702-d6b3d26e-0cb1-11e8-8e26-13f84d58ed50.png)
-![image](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
-![image](https://user-images.githubusercontent.com/26799439/35977779-fc171372-0cb1-11e8-856e-91ac791549fd.png)
-![image](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
+
 
