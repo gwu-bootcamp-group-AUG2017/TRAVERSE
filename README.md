@@ -72,7 +72,9 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 #### Click the Thumbs up/down icon to view comments
 ![View Comment](/screenshots/view-comment.png)
 
-Please check out the deployed version in Heroku [here](ttps://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)!
+![image](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
+
+Please check out the deployed version in Heroku [here](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)!
 #### Click the Delete button to remove rude comments via the `remove/comment/:id` route
 ![Delete Comment](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
 
