@@ -61,7 +61,8 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 #### The `/articles` route renders all the news articles
 ![image](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
 ![image](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
-
+#### Weather
+[#### Weather](https://user-images.githubusercontent.com/26799439/35977634-a1726d22-0cb1-11e8-9c1a-01e285cb13f4.png)
 #### Restaurants
 [Restaurants](https://user-images.githubusercontent.com/26799439/35977656-b0fa9e36-0cb1-11e8-8a0d-e8165e0ca1b9.png)
 #### Hotels
