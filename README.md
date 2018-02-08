@@ -62,38 +62,21 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 ![image](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
 ![image](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
 
-
-#### Click on the globe icon to view the content.
-![Article Content](/screenshots/article.png)
-
-#### Click the Chat Bubble icon to add a comment via the `/add/comment/:id` post route
-![Add Comment](/screenshots/add-comment.png)
-
-#### Click the Thumbs up/down icon to view comments
-![View Comment](/screenshots/view-comment.png)
-
+#### Restaurants
 [Restaurants](https://user-images.githubusercontent.com/26799439/35977656-b0fa9e36-0cb1-11e8-8a0d-e8165e0ca1b9.png)
-
+#### Hotels
 [Hotels](https://user-images.githubusercontent.com/26799439/35977671-bfa0d7e8-0cb1-11e8-853e-2eb54c9212c8.png)
-
+#### Night Clubs
 [Night Clubs](https://user-images.githubusercontent.com/26799439/35977687-c9192ca8-0cb1-11e8-92e8-ab847a0280c5.png)
-
-
+#### Save Place
 [Save Place](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
-
+#### View Saved Places
 [View Saved Places](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
-
-
-
+#### Delete Place
 [Delete Place from mongodb ](https://user-images.githubusercontent.com/26799439/35977779-fc171372-0cb1-11e8-856e-91ac791549fd.png)
-
-
 #### Logout
 [Logout](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
 
-Please check out the deployed version in Heroku [here](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)!
-#### Click the Delete button to remove rude comments via the `remove/comment/:id` route
-![Delete Comment](https://user-images.githubusercontent.com/26799439/35977803-099f98f2-0cb2-11e8-8614-94204718afa7.png)
 
 #### Note that the web scraping occurs on the `/scrape` route.
 #### On visiting the index route, `/`, express redirects to `/scrape` and then `/articles` routes
