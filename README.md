@@ -58,10 +58,7 @@ On the frontend, the app uses `handlebars` for templating each article and `mate
 And for webscraping, the app uses the `request` and `cheerio` node packages. All webscrapping code can be found in the `controllers.js` file.
 
 ## Screenshots
-#### The `/articles` route renders all the news articles
-![image](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
-
-[Login](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
+[Login](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
 
 [Login](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
 
