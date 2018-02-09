@@ -15,13 +15,13 @@ Login using Auth0 npm package- login id is stored in local storage and is used w
 
 Display places visted by userid using MongoDB and mongoose model for database schema for a user
 
-Display Resturants Hotels and Night Clubs for a location and price range - all data can be saved to Mongodb 
+Save a place detail data to mongoDB 
 
 OpenWeatherMap API to retrieve 6 day weather forecast for a location
 
 Uses Google GeoCoder API to translate city/state into long/lat coordinates for OpenWeatherMap API call
 
-Google Places API to retrieve loaction data for Resturants Hotels and Night Clubs within a price range
+Google Places API to retrieve location data for Resturants Hotels and Night Clubs within a price range
 
 axios package to do API and database calls
 
