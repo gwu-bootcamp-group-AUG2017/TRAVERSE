@@ -2,8 +2,9 @@
 
 A one stop travel portal to display info for a given location by price range using Google Places API data
 
-React.js Node.js Mongodb 
-A 'React.js' Node.js` `Node.js` &amp; `MongoDB` webapp that web-scrapes news data from [The Onion](http://www.theonion.com/) and allows users to comment about what they have read. Users can also delete unwanted comments.
+A 'React.js Node.js Mongodb  webapp that displays Travel data for a city for Resturants, Hotels and Night Clubs
+
+Where Do You Want to Go ?
 
 Please check out the deployed version in Heroku [here](https://traverse2.herokuapp.com/)!
 
