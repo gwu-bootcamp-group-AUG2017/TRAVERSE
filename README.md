@@ -1,38 +1,30 @@
 # TRAVERSE
 
-A one stop travel portal to display info for a given location by price range
+A one stop travel portal to display info for a given location by price range using Google Places API data
 
-Node.js Mongodb 
-A `Node.js` &amp; `MongoDB` webapp that web-scrapes news data from [The Onion](http://www.theonion.com/) and allows users to comment about what they have read. Users can also delete unwanted comments.
-
-A Node.js & MongoDB webapp that web-scrapes news data from The Onion and allows users to comment about what they have read. Users can also delete unwanted comments.
-
-Use mongoDB to store place data for logged in user - login id is stored in db so 
-
-Use Auth0 and jwt-decode npm package for authentication and jw
-
-Use Axios npm package for API and database calls
-
-Uses mongooose model for database schema
+React.js Node.js Mongodb 
+A 'React.js' Node.js` `Node.js` &amp; `MongoDB` webapp that web-scrapes news data from [The Onion](http://www.theonion.com/) and allows users to comment about what they have read. Users can also delete unwanted comments.
 
 Please check out the deployed version in Heroku [here](https://traverse2.herokuapp.com/)!
 
 ## Functionality
 Uses MVC directory structure
 
-Login using Auth0 - login id is stored in local storage and is used to 
+Login using Auth0 npm package- login id is stored in local storage and is used when saving place data to the database
 
-Display places visted by userid using MongoDB and mongoose
+Display places visted by userid using MongoDB and mongoose model for database schema for a user
 
 Display Resturants Hotels and Night Clubs for a location and price range - all data can be saved to Mongodb 
 
 App uses OpenWeatherMap API to display 6 day weather forecast for a location
+
 Uses Google GeoCoder API to translate city/state into long/lat coordinates for OpenWeatherMap API call
 
 Uses Google Places API textseach to get place ids for criteria and then loop through results 
-and use Google Places details to get detail data for each place (name, rating, url, photo, review) whihc is then returned to the
+and use Google Places details to get detail data for each place which is then returned to the
+client in an object for mapping in the React component
 
-Backend:
+axios package to do API and database calls
 
 express to serve routes
 
@@ -40,22 +32,9 @@ axios to do API and database calls
 
 Google Places API to retrieve loaction data for Resturants Hotels and Night Clubs within a price range
 
-Google Geocoder API to translate city/state to long/lat coordinates 
-
 OpenWeatherMap API to retrieve 6 day weather forecast for a location
 
-Frontend:
-
-React-js to 
-
-
-
-
-On the backend, the app uses `express` to serve routes react to  and `mongoose` to interact with a `MongoDB` database.
-
-On the frontend, the app uses `handlebars` for templating each article and `materialize` as a styling framework. The app also uses `jQuery` and `AJAX` to help with making post requests.
-
-And for webscraping, the app uses the `request` and `cheerio` node packages. All webscrapping code can be found in the `controllers.js` file.
+Bootstrap for css styling
 
 ## Screenshots
 [Login](https://user-images.githubusercontent.com/26799439/35976200-5e5d4aec-0cad-11e8-9f53-45634eb289e1.png)
@@ -63,7 +42,6 @@ And for webscraping, the app uses the `request` and `cheerio` node packages. All
 [Login](https://user-images.githubusercontent.com/26799439/35976214-69012f40-0cad-11e8-9f94-534da34da391.png)
 
 [Search](https://user-images.githubusercontent.com/26799439/35977605-8efb0afa-0cb1-11e8-8f9d-d6f7a1cc49d1.png)
-
 
 [Weather](https://user-images.githubusercontent.com/26799439/35977634-a1726d22-0cb1-11e8-9c1a-01e285cb13f4.png)
 
