@@ -2,7 +2,7 @@
 
 A one stop travel portal to display info for a given location by price range using Google Places API data
 
-A 'React.js Node.js Mongodb  webapp that displays Travel data for a city for Resturants, Hotels and Night Clubs
+A 'React.js Node.js Mongodb  webapp that displays Travel data for a city for Restaurants, Hotels and Night Clubs
 
 #### Where Do You Want to Go ?
 
@@ -21,7 +21,7 @@ OpenWeatherMap API to retrieve 6 day weather forecast for a location
 
 Uses Google GeoCoder API to translate city/state into long/lat coordinates for OpenWeatherMap API call
 
-Google Places API to retrieve location data for Resturants Hotels and Night Clubs within a price range
+Google Places API to retrieve location data for Restaurants Hotels and Night Clubs within a price range
 
 axios package to do API and database calls
 
