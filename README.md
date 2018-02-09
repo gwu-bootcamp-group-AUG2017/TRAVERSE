@@ -17,23 +17,15 @@ Display places visted by userid using MongoDB and mongoose model for database sc
 
 Display Resturants Hotels and Night Clubs for a location and price range - all data can be saved to Mongodb 
 
-App uses OpenWeatherMap API to display 6 day weather forecast for a location
+OpenWeatherMap API to retrieve 6 day weather forecast for a location
 
 Uses Google GeoCoder API to translate city/state into long/lat coordinates for OpenWeatherMap API call
 
-Uses Google Places API textseach to get place ids for criteria and then loop through results 
-and use Google Places details to get detail data for each place which is then returned to the
-client in an object for mapping in the React component
+Google Places API to retrieve loaction data for Resturants Hotels and Night Clubs within a price range
 
 axios package to do API and database calls
 
 express to serve routes
-
-axios to do API and database calls
-
-Google Places API to retrieve loaction data for Resturants Hotels and Night Clubs within a price range
-
-OpenWeatherMap API to retrieve 6 day weather forecast for a location
 
 Bootstrap for css styling
 
