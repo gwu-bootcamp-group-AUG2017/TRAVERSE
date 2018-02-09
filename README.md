@@ -4,7 +4,7 @@ A one stop travel portal to display info for a given location by price range usi
 
 A 'React.js Node.js Mongodb  webapp that displays Travel data for a city for Resturants, Hotels and Night Clubs
 
-Where Do You Want to Go ?
+#### Where Do You Want to Go ?
 
 Please check out the deployed version in Heroku [here](https://traverse2.herokuapp.com/)!
 
