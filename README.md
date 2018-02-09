@@ -44,7 +44,7 @@ Bootstrap for css styling
 
 [Night Clubs](https://user-images.githubusercontent.com/26799439/35977687-c9192ca8-0cb1-11e8-92e8-ab847a0280c5.png)
 
-[Save Place](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
+[Save Place](https://user-images.githubusercontent.com/26799439/36028926-02c9eaec-0d6f-11e8-9f5c-fc7964872fe5.png)
 
 [View Saved Places](https://user-images.githubusercontent.com/26799439/35977743-eeae3a08-0cb1-11e8-8484-cdb73b560a2f.png)
 
